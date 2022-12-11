@@ -16,7 +16,7 @@ namespace CsharpForm
         {
             InitializeComponent();
         }
-        //Try
+        //Try - Nice try
         //Main Menu main Form
         private void MainMenu_Load(object sender, EventArgs e)
         {
