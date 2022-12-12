@@ -20,7 +20,12 @@ namespace CsharpForm
         //Main Menu main Form
         private void MainMenu_Load(object sender, EventArgs e)
         {
-            
+            dataGridView1.Hide();
+        }
+        //Booking Button
+        private void button1_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Show();
         }
     }
 }
