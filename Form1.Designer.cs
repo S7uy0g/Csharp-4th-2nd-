@@ -69,7 +69,7 @@
             // 
             this.password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.password.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.password.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.password.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.password.Location = new System.Drawing.Point(30, 122);
             this.password.MinimumSize = new System.Drawing.Size(354, 40);
             this.password.Name = "password";
@@ -157,11 +157,11 @@
             // 
             this.email.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.email.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.email.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.email.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.email.Location = new System.Drawing.Point(30, 51);
             this.email.Margin = new System.Windows.Forms.Padding(2);
             this.email.Name = "email";
-            this.email.Size = new System.Drawing.Size(354, 36);
+            this.email.Size = new System.Drawing.Size(354, 32);
             this.email.TabIndex = 19;
             this.email.TextChanged += new System.EventHandler(this.email_TextChanged);
             // 
