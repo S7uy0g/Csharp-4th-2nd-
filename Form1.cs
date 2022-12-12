@@ -79,11 +79,14 @@ namespace CsharpForm
                 string data2 = dt.Rows[0]["FMLPassword"].ToString();
                 if (getMail == data1 && getPassword == data2)
                 {
-                    signUpForm nextForm;
+                    MainMenu nextForm;
                     this.Hide();
-                    nextForm = new signUpForm();
-                    nextForm.ShowDialog();
+                    nextForm = new MainMenu();
+                   /* nextForm.ShowDialog();
                     this.Show();
+                    this.Hide();*/
+                    nextForm.Closed += (s, args) => this.Close();
+                    nextForm.Show();
                 }
             }
             else if (email.Text == string.Empty && password.Text == string.Empty)

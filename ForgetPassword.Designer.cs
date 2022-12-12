@@ -42,7 +42,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.FindNo = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
@@ -177,13 +177,13 @@
             this.label1.Text = "Forgot Your Password?";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // textBox5
+            // FindNo
             // 
-            this.textBox5.Location = new System.Drawing.Point(81, 42);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(235, 23);
-            this.textBox5.TabIndex = 2;
-            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            this.FindNo.Location = new System.Drawing.Point(81, 42);
+            this.FindNo.Name = "FindNo";
+            this.FindNo.Size = new System.Drawing.Size(235, 23);
+            this.FindNo.TabIndex = 2;
+            this.FindNo.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // label6
             // 
@@ -216,7 +216,7 @@
             this.ClientSize = new System.Drawing.Size(800, 449);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.FindNo);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "ForgetPassword";
@@ -245,7 +245,7 @@
         private Label label1;
         private TextBox PhoneNo;
         private Label label5;
-        private TextBox textBox5;
+        private TextBox FindNo;
         private Label label6;
         private Button button2;
         private ErrorProvider errorProvider1;

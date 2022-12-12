@@ -50,8 +50,8 @@ namespace CsharpForm
                 string data = (string)sqlCommand.ExecuteScalar();
                 if (getEmail == data.ToString())
                 {
-                    //string query2 = "UPDATE User_Admin SET Email='" + getEmail + "',contact='" + getPhoneNo + "',FMLPassword='" + getPassword + "' WHERE Email='" + getEmail + "'";
-                    string query2 = "UPDATE UserAdmin SET Email='" + getEmail + "',PhoneNo='" + getPhoneNo + "',FMLPassword='" + getPassword + "' WHERE Email='" + getEmail + "'";
+                    string query2 = "UPDATE User_Admin SET Email='" + getEmail + "',contact='" + getPhoneNo + "',FMLPassword='" + getPassword + "' WHERE Email='" + getEmail + "'";
+                    //string query2 = "UPDATE UserAdmin SET Email='" + getEmail + "',PhoneNo='" + getPhoneNo + "',FMLPassword='" + getPassword + "' WHERE Email='" + getEmail + "'";
                     SqlCommand cmd2 = new SqlCommand(query2, conn);
                     cmd2.ExecuteNonQuery();
                 }
@@ -64,7 +64,7 @@ namespace CsharpForm
         private void button2_Click(object sender, EventArgs e)
         {
             conn.Open();
-            string getContact = textBox5.Text;
+            string getContact = FindNo.Text;
             //string query = "Select Email,PhoneNo From UserAdmin WHERE PhoneNo='" + getContact + "'";
             string query = "Select Email,contact From User_Admin WHERE contact='" + getContact + "'";
             SqlCommand sqlCommand = new SqlCommand(query, conn);
@@ -78,6 +78,10 @@ namespace CsharpForm
                 //string data2 = dt.Rows[0]["PhoneNo"].ToString();
                 Email.Text = data1;
                 PhoneNo.Text = data2;
+            }
+            else
+            {
+                MessageBox.Show("Account Doesnot Exist");
             }
             conn.Close();
         }
@@ -108,6 +112,23 @@ namespace CsharpForm
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
 
+            conn.Open();
+            string getPhone = FindNo.Text;
+            //string query = "SELECT PhoneNO from UserAdmin where PhoneNo='" + getPhone + "'";
+            string query = "SELECT contact from User_Admin where contact='" + getPhone + "'";
+            SqlCommand sqlCommand = new SqlCommand(query, conn);
+            SqlDataAdapter sda = new SqlDataAdapter(sqlCommand);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            if (dt.Rows.Count <= 0)
+            {
+                errorProvider1.SetError(FindNo, "Does Not Exist");
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+            conn.Close();
         }
         //Main Girl Logo Function
         private void pictureBox1_Click(object sender, EventArgs e)
