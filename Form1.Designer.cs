@@ -179,14 +179,14 @@
             // signUp
             // 
             this.signUp.BackColor = System.Drawing.Color.LimeGreen;
-            this.signUp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.signUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.signUp.Font = new System.Drawing.Font("Times New Roman", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.signUp.ForeColor = System.Drawing.Color.White;
             this.signUp.Location = new System.Drawing.Point(77, 305);
             this.signUp.Name = "signUp";
             this.signUp.Size = new System.Drawing.Size(283, 62);
             this.signUp.TabIndex = 15;
-            this.signUp.Text = "Admin";
+            this.signUp.Text = "SignUp";
             this.signUp.UseVisualStyleBackColor = false;
             this.signUp.Click += new System.EventHandler(this.signUp_Click);
             // 

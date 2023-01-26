@@ -36,7 +36,11 @@ namespace CsharpForm
 
         private void signUpForm_Load(object sender, EventArgs e)
         {
-            panel2.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel2.Width, panel2.Height, 40, 40));
+/*            this.FormBorderStyle = FormBorderStyle.None;*/  //use for deleting the topbar of the window form 
+
+            signUp2.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, signUp2.Width, signUp2.Height, 30, 30));//sign up rounded shape
+            panel2.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel2.Width, panel2.Height, 60, 60));//Panel rounded shape
+            panel2.BackColor = Color.FromArgb(100, 0, 0, 0); // used for transplarant bg for the sign up panel
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -66,42 +70,42 @@ namespace CsharpForm
 
         private void email_TextBox_TextChanged(object sender, EventArgs e)
         {
-            string userEmail = email_TextBox.Text;
+            
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            string userFirstName = firstName.Text;
+            
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            string userMiddelName = middleName.Text;
+           
         }
 
         private void lastName_TextChanged(object sender, EventArgs e)
         {
-            string userLastName = lastName.Text;
+           
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string day = ageDay.Text;
+            
         }
 
         private void ageMonth_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string month = ageMonth.Text;
+            
         }
 
         private void password_TextBox_TextChanged(object sender, EventArgs e)
         {
-            string password = password_TextBox.Text;
+            
         }
 
         private void confirm_TextBox_TextChanged(object sender, EventArgs e)
         {
-            string confirm = confirm_TextBox.Text;
+            
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
@@ -109,6 +113,21 @@ namespace CsharpForm
         }
 
         private void signUp_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged_1(object sender, EventArgs e)
         {
 
         }
