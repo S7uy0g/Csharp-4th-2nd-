@@ -8,6 +8,28 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
+
+
+
+/*
+use signUp;
+CREATE TABLE signUp_Table(
+	first_name VARCHAR(50) NOT NULL,
+    middle_name VARCHAR(50),
+	last_name VARCHAR(50) NOT NULL,
+    contact_no VARCHAR(50) NOT NULL,
+    futsal_name VARCHAR(50) NOT NULL,
+    field_no INT NOT NULL,
+    game_price INT NOT NULL,
+    email VARCHAR(60) NOT NULL,
+    admin_password VARCHAR(60) NOT NULL
+);
+
+SELECT* FROM signUp_Table;*/
+
+
+
 
 namespace CsharpForm
 {

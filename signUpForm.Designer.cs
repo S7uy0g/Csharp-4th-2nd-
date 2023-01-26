@@ -30,6 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(signUpForm));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.futsal = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.signUp2 = new System.Windows.Forms.Button();
             this.confirm_TextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -44,13 +51,6 @@
             this.middleName = new System.Windows.Forms.TextBox();
             this.firstName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.futsal = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,6 +84,94 @@
             this.panel2.TabIndex = 0;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox3.Font = new System.Drawing.Font("Segoe UI Emoji", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox3.Location = new System.Drawing.Point(62, 342);
+            this.textBox3.MaximumSize = new System.Drawing.Size(354, 60);
+            this.textBox3.MinimumSize = new System.Drawing.Size(540, 40);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(540, 40);
+            this.textBox3.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Emoji", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label3.Location = new System.Drawing.Point(64, 319);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(98, 20);
+            this.label3.TabIndex = 35;
+            this.label3.Text = "Contact No.";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.BackColor = System.Drawing.Color.Transparent;
+            this.checkBox1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.checkBox1.Location = new System.Drawing.Point(500, 288);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(111, 24);
+            this.checkBox1.TabIndex = 6;
+            this.checkBox1.Text = "Membership";
+            this.checkBox1.UseVisualStyleBackColor = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Emoji", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.Location = new System.Drawing.Point(64, 253);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(98, 20);
+            this.label2.TabIndex = 32;
+            this.label2.Text = "No. of Field";
+            // 
+            // textBox2
+            // 
+            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.Font = new System.Drawing.Font("Segoe UI Emoji", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.textBox2.Location = new System.Drawing.Point(62, 276);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(420, 36);
+            this.textBox2.TabIndex = 5;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged_1);
+            // 
+            // futsal
+            // 
+            this.futsal.AutoSize = true;
+            this.futsal.BackColor = System.Drawing.Color.Transparent;
+            this.futsal.Font = new System.Drawing.Font("Segoe UI Emoji", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.futsal.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.futsal.Location = new System.Drawing.Point(64, 185);
+            this.futsal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.futsal.Name = "futsal";
+            this.futsal.Size = new System.Drawing.Size(102, 20);
+            this.futsal.TabIndex = 30;
+            this.futsal.Text = "Futsal Name";
+            this.futsal.Click += new System.EventHandler(this.label2_Click_1);
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI Emoji", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox1.Location = new System.Drawing.Point(62, 208);
+            this.textBox1.MaximumSize = new System.Drawing.Size(354, 60);
+            this.textBox1.MinimumSize = new System.Drawing.Size(540, 40);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(540, 40);
+            this.textBox1.TabIndex = 4;
+            // 
             // signUp2
             // 
             this.signUp2.BackColor = System.Drawing.Color.LimeGreen;
@@ -108,7 +196,7 @@
             this.confirm_TextBox.MinimumSize = new System.Drawing.Size(540, 40);
             this.confirm_TextBox.Name = "confirm_TextBox";
             this.confirm_TextBox.Size = new System.Drawing.Size(540, 40);
-            this.confirm_TextBox.TabIndex = 27;
+            this.confirm_TextBox.TabIndex = 10;
             this.confirm_TextBox.TextChanged += new System.EventHandler(this.confirm_TextBox_TextChanged);
             // 
             // label7
@@ -147,7 +235,7 @@
             this.password_TextBox.MinimumSize = new System.Drawing.Size(540, 40);
             this.password_TextBox.Name = "password_TextBox";
             this.password_TextBox.Size = new System.Drawing.Size(540, 40);
-            this.password_TextBox.TabIndex = 24;
+            this.password_TextBox.TabIndex = 9;
             this.password_TextBox.TextChanged += new System.EventHandler(this.password_TextBox_TextChanged);
             // 
             // email_TextBox
@@ -160,7 +248,7 @@
             this.email_TextBox.MinimumSize = new System.Drawing.Size(540, 40);
             this.email_TextBox.Name = "email_TextBox";
             this.email_TextBox.Size = new System.Drawing.Size(540, 40);
-            this.email_TextBox.TabIndex = 23;
+            this.email_TextBox.TabIndex = 8;
             this.email_TextBox.TextChanged += new System.EventHandler(this.email_TextBox_TextChanged);
             // 
             // label5
@@ -261,94 +349,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Sign Up";
             this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI Emoji", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(62, 208);
-            this.textBox1.MaximumSize = new System.Drawing.Size(354, 60);
-            this.textBox1.MinimumSize = new System.Drawing.Size(540, 40);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(540, 40);
-            this.textBox1.TabIndex = 29;
-            // 
-            // futsal
-            // 
-            this.futsal.AutoSize = true;
-            this.futsal.BackColor = System.Drawing.Color.Transparent;
-            this.futsal.Font = new System.Drawing.Font("Segoe UI Emoji", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.futsal.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.futsal.Location = new System.Drawing.Point(64, 185);
-            this.futsal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.futsal.Name = "futsal";
-            this.futsal.Size = new System.Drawing.Size(102, 20);
-            this.futsal.TabIndex = 30;
-            this.futsal.Text = "Futsal Name";
-            this.futsal.Click += new System.EventHandler(this.label2_Click_1);
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI Emoji", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox2.Location = new System.Drawing.Point(62, 276);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(420, 36);
-            this.textBox2.TabIndex = 31;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged_1);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Emoji", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(64, 253);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 20);
-            this.label2.TabIndex = 32;
-            this.label2.Text = "No. of Field";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.checkBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.checkBox1.Location = new System.Drawing.Point(500, 288);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(111, 24);
-            this.checkBox1.TabIndex = 34;
-            this.checkBox1.Text = "Membership";
-            this.checkBox1.UseVisualStyleBackColor = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Segoe UI Emoji", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(64, 319);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 20);
-            this.label3.TabIndex = 35;
-            this.label3.Text = "Contact No.";
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI Emoji", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox3.Location = new System.Drawing.Point(62, 342);
-            this.textBox3.MaximumSize = new System.Drawing.Size(354, 60);
-            this.textBox3.MinimumSize = new System.Drawing.Size(540, 40);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(540, 40);
-            this.textBox3.TabIndex = 36;
             // 
             // signUpForm
             // 
