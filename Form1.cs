@@ -11,8 +11,8 @@ namespace CsharpForm
 {
     public partial class Form1 : Form
     {
-        SqlConnection conn = new SqlConnection(@"Data Source = .\SQLEXPRESS; Initial Catalog = FMLProject; Integrated Security = True");
-       // SqlConnection conn = new SqlConnection(@"Data Source=GWTN141-4;Initial Catalog=FMLProject;Integrated Security=True");
+        //SqlConnection conn = new SqlConnection(@"Data Source = .\SQLEXPRESS; Initial Catalog = FMLProject; Integrated Security = True");
+        SqlConnection conn = new SqlConnection(@"Data Source=GWTN141-4;Initial Catalog=FMLProject;Integrated Security=True");
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
 
         private static extern IntPtr CreateRoundRectRgn
@@ -67,18 +67,18 @@ namespace CsharpForm
             conn.Open();
             string getMail = email.Text;
             string getPassword = password.Text;
-            //string query = "SELECT Email,FMLPassword from UserAdmin where Email='" + getMail + "'AND FMLPassword='" + getPassword + "'";
+            string query = "SELECT Email,FMLPassword from UserAdmin where Email='" + getMail + "'AND FMLPassword='" + getPassword + "'";
             
             //Rohan SQL Code
-            string query = "SELECT name,FMLPassword from UserAdmin where name='" + getMail + "'AND FMLPassword='" + getPassword + "'";
+            //string query = "SELECT name,FMLPassword from UserAdmin where name='" + getMail + "'AND FMLPassword='" + getPassword + "'";
             SqlCommand sqlCommand = new SqlCommand(query, conn);
             SqlDataAdapter sda = new SqlDataAdapter(sqlCommand);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             if (dt.Rows.Count > 0)
             {
-                //string data1 = dt.Rows[0]["Email"].ToString();
-                string data1 = dt.Rows[0]["name"].ToString();
+                string data1 = dt.Rows[0]["Email"].ToString();
+                //string data1 = dt.Rows[0]["name"].ToString();
                 string data2 = dt.Rows[0]["FMLPassword"].ToString();
                 if (getMail == data1 && getPassword == data2)
                 {
@@ -151,10 +151,10 @@ namespace CsharpForm
         {
             conn.Open();
             string getMail=email.Text;
-            //string query = "SELECT Email from User_Admin where Email='" + getMail + "'";
+            string query = "SELECT Email from UserAdmin where Email='" + getMail + "'";
            
             //Rohan SQL Code
-            string query = "SELECT name from UserAdmin where name='" + getMail + "'";
+            //string query = "SELECT name from UserAdmin where name='" + getMail + "'";
             SqlCommand sqlCommand = new SqlCommand(query, conn);
             SqlDataAdapter sda = new SqlDataAdapter(sqlCommand);
             DataTable dt = new DataTable();

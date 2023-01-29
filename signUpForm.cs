@@ -9,15 +9,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.ComponentModel.Design.ObjectSelectorEditor;
+using System.Data.SqlClient;
 
 
 
-/*
-use signUp;
+/*use signUp
 CREATE TABLE signUp_Table(
-	first_name VARCHAR(50) NOT NULL,
-    middle_name VARCHAR(50),
-	last_name VARCHAR(50) NOT NULL,
+	admin_name VARCHAR(50) NOT NULL,
     contact_no VARCHAR(50) NOT NULL,
     futsal_name VARCHAR(50) NOT NULL,
     field_no INT NOT NULL,
@@ -26,7 +24,8 @@ CREATE TABLE signUp_Table(
     admin_password VARCHAR(60) NOT NULL
 );
 
-SELECT* FROM signUp_Table;*/
+SELECT* FROM signUp_Table;
+*/
 
 
 
@@ -35,7 +34,8 @@ namespace CsharpForm
 {
     public partial class signUpForm : Form
     {
-
+        //SqlConnection conn = new SqlConnection(@"Data Source = .\SQLEXPRESS; Initial Catalog = FMLProject; Integrated Security = True");
+        SqlConnection conn = new SqlConnection(@"Data Source=GWTN141-4;Initial Catalog=signUp;Integrated Security=True");
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
 
         private static extern IntPtr CreateRoundRectRgn
@@ -137,27 +137,61 @@ namespace CsharpForm
         //signupButton
         private void signUp_Click(object sender, EventArgs e)
         {
+            conn.Open();
+            string AdminName = Admin_Name.Text;
             string FutsalName = textBox1.Text;
             string NoFields = textBox2.Text;
             string ContactNo = textBox3.Text;
             string Email = email_TextBox.Text;
+            string GamePrice = gamePrice.Text;
+            string Password= password_TextBox.Text;
+            string ConfirmPassword = confirm_TextBox.Text;
             if (password_TextBox.Text != confirm_TextBox.Text)
             {
                 errorProvider1.Clear();
                 errorProvider1.SetError(password_TextBox, "Not Same");
                 errorProvider1.SetError(confirm_TextBox, "Not Same");
             }
-            else if (password_TextBox.Text ==string.Empty && confirm_TextBox.Text==string.Empty)
+            else if (password_TextBox.Text ==string.Empty || confirm_TextBox.Text==string.Empty)
             {
                 errorProvider1.Clear();
                 errorProvider1.SetError(password_TextBox, "Null");
                 errorProvider1.SetError(confirm_TextBox, "Null");
             }
+            else if(AdminName == string.Empty)
+            {
+                errorProvider1.SetError(Admin_Name, "Null");
+            }
+            else if(FutsalName == string.Empty)
+            {
+                errorProvider1.SetError(textBox1, "Null");
+            }
+            else if (NoFields == string.Empty)
+            {
+                errorProvider1.SetError(textBox2, "Null");
+            }
+            else if (ContactNo == string.Empty)
+            {
+                errorProvider1.SetError(textBox3, "Null");
+            }
+            else if (Email == string.Empty)
+            {
+                errorProvider1.SetError(email_TextBox, "Null");
+            }
+            else if (GamePrice == string.Empty)
+            {
+                errorProvider1.SetError(gamePrice, "Null");
+            }
             else
             {
                 errorProvider1.Clear();
                 MessageBox.Show("Nice one");
+                /*(admin_name,contact_no,futsal_name,field_no,game_price,email ,admin_password)*/
+                string query = "Insert into signUp_Table values('" + AdminName + "','" + ContactNo + "','" + FutsalName + "','" + NoFields + "','" + GamePrice + "','" + Email + "','" + Password + "')";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.ExecuteNonQuery();
             }
+            conn.Close();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -208,6 +242,38 @@ namespace CsharpForm
         private void label7_Click(object sender, EventArgs e)
         {
 
+        }
+        //MainPassword Hidden Function
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (password_TextBox.PasswordChar == '*')
+            {
+                string getPassword = password_TextBox.Text;
+                password_TextBox.Text = getPassword;
+                password_TextBox.PasswordChar = '\0';
+            }
+            else
+            {
+                string getPassword = password_TextBox.Text;
+                password_TextBox.Text = getPassword;
+                password_TextBox.PasswordChar = '*';
+            }
+        }
+        //confirm Pssword Hidden function
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (confirm_TextBox.PasswordChar == '*')
+            {
+                string getPassword = confirm_TextBox.Text;
+                confirm_TextBox.Text = getPassword;
+                confirm_TextBox.PasswordChar = '\0';
+            }
+            else
+            {
+                string getPassword = confirm_TextBox.Text;
+                confirm_TextBox.Text = getPassword;
+                confirm_TextBox.PasswordChar = '*';
+            }
         }
     }
 }
