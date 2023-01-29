@@ -136,7 +136,23 @@ namespace CsharpForm
 
         private void signUp_Click(object sender, EventArgs e)
         {
-
+            if(password_TextBox.Text != confirm_TextBox.Text)
+            {
+                errorProvider1.Clear();
+                errorProvider1.SetError(password_TextBox, "Not Same");
+                errorProvider1.SetError(confirm_TextBox, "Not Same");
+            }
+            else if (password_TextBox.Text ==string.Empty && confirm_TextBox.Text==string.Empty)
+            {
+                errorProvider1.Clear();
+                errorProvider1.SetError(password_TextBox, "Null");
+                errorProvider1.SetError(confirm_TextBox, "Null");
+            }
+            else
+            {
+                errorProvider1.Clear();
+                MessageBox.Show("Nice one");
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

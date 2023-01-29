@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(signUpForm));
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -51,7 +52,9 @@
             this.middleName = new System.Windows.Forms.TextBox();
             this.firstName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -350,12 +353,16 @@
             this.label1.Text = "Sign Up";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // signUpForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1489, 751);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.panel2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -365,6 +372,7 @@
             this.Load += new System.EventHandler(this.signUpForm_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -393,5 +401,6 @@
         private CheckBox checkBox1;
         private Label label2;
         private TextBox textBox2;
+        private ErrorProvider errorProvider1;
     }
 }
