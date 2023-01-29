@@ -81,7 +81,7 @@
             this.panel2.Controls.Add(this.middleName);
             this.panel2.Controls.Add(this.firstName);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(754, 50);
+            this.panel2.Location = new System.Drawing.Point(592, 22);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(651, 674);
             this.panel2.TabIndex = 0;
@@ -98,6 +98,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(540, 40);
             this.textBox3.TabIndex = 7;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label3
             // 
@@ -111,6 +112,7 @@
             this.label3.Size = new System.Drawing.Size(98, 20);
             this.label3.TabIndex = 35;
             this.label3.Text = "Contact No.";
+            this.label3.Click += new System.EventHandler(this.label3_Click_1);
             // 
             // checkBox1
             // 
@@ -137,6 +139,7 @@
             this.label2.Size = new System.Drawing.Size(98, 20);
             this.label2.TabIndex = 32;
             this.label2.Text = "No. of Field";
+            this.label2.Click += new System.EventHandler(this.label2_Click_2);
             // 
             // textBox2
             // 
@@ -174,6 +177,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(540, 40);
             this.textBox1.TabIndex = 4;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // signUp2
             // 
@@ -214,6 +218,7 @@
             this.label7.Size = new System.Drawing.Size(144, 20);
             this.label7.TabIndex = 26;
             this.label7.Text = "Confirm Password";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label4
             // 
@@ -227,6 +232,7 @@
             this.label4.Size = new System.Drawing.Size(79, 20);
             this.label4.TabIndex = 25;
             this.label4.Text = "Password";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // password_TextBox
             // 
@@ -266,6 +272,7 @@
             this.label5.Size = new System.Drawing.Size(51, 20);
             this.label5.TabIndex = 20;
             this.label5.Text = "Email";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // lName
             // 
@@ -362,7 +369,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.ClientSize = new System.Drawing.Size(1280, 749);
             this.Controls.Add(this.panel2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

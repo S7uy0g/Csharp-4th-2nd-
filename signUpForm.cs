@@ -35,6 +35,7 @@ namespace CsharpForm
 {
     public partial class signUpForm : Form
     {
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
 
         private static extern IntPtr CreateRoundRectRgn
@@ -64,7 +65,7 @@ namespace CsharpForm
             panel2.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel2.Width, panel2.Height, 60, 60));//Panel rounded shape
             panel2.BackColor = Color.FromArgb(100, 0, 0, 0); // used for transplarant bg for the sign up panel
         }
-
+        //SignUpLabel
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -89,7 +90,7 @@ namespace CsharpForm
         {
 
         }
-
+        //EmailTextBox
         private void email_TextBox_TextChanged(object sender, EventArgs e)
         {
             
@@ -119,12 +120,12 @@ namespace CsharpForm
         {
             
         }
-
+        //PasswordTextbox
         private void password_TextBox_TextChanged(object sender, EventArgs e)
         {
             
         }
-
+        //confirmPasswordTextbox
         private void confirm_TextBox_TextChanged(object sender, EventArgs e)
         {
             
@@ -133,10 +134,14 @@ namespace CsharpForm
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
         }
-
+        //signupButton
         private void signUp_Click(object sender, EventArgs e)
         {
-            if(password_TextBox.Text != confirm_TextBox.Text)
+            string FutsalName = textBox1.Text;
+            string NoFields = textBox2.Text;
+            string ContactNo = textBox3.Text;
+            string Email = email_TextBox.Text;
+            if (password_TextBox.Text != confirm_TextBox.Text)
             {
                 errorProvider1.Clear();
                 errorProvider1.SetError(password_TextBox, "Not Same");
@@ -159,13 +164,48 @@ namespace CsharpForm
         {
 
         }
-
+        //FutsalNameLabel
         private void label2_Click_1(object sender, EventArgs e)
         {
 
         }
-
+        //NoOfFieldsTextbox
         private void textBox2_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+        //FutsalNameTextbox
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+        //ContactNoTextbox
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        //NoOffieldsLabel
+        private void label2_Click_2(object sender, EventArgs e)
+        {
+
+        }
+        //ContactNoLabel
+        private void label3_Click_1(object sender, EventArgs e)
+        {
+
+        }
+        //EmailLabel
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+        //PasswordLabel
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+        //ConfirmPasswordLabel
+        private void label7_Click(object sender, EventArgs e)
         {
 
         }
