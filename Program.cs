@@ -1,3 +1,4 @@
+using System.Data.SqlClient;
 namespace CsharpForm
 {
     internal static class Program
@@ -10,8 +11,18 @@ namespace CsharpForm
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
+            SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-LHHH1S3\SQLEXPRESS;Initial Catalog=signUp;Integrated Security=True");
             ApplicationConfiguration.Initialize();
-            Application.Run(new signUpForm());
+            conn.Open();
+            string query = "SELECT count(*) from signUp_Table";
+            //Rohan SQL Code
+            //string query = "SELECT name,FMLPassword from UserAdmin where name='" + getMail + "'AND FMLPassword='" + getPassword + "'";
+            SqlCommand sqlCommand = new SqlCommand(query, conn);
+            int count=Convert.ToInt32(sqlCommand.ExecuteScalar());
+            if (count > 0)
+            {
+                Application.Run(new Form1());
+            }
         }
     }
 }

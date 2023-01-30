@@ -68,9 +68,7 @@ namespace CsharpForm
             string getMail = email.Text;
             string getPassword = password.Text;
             string query = "SELECT Email,FMLPassword from UserAdmin where Email='" + getMail + "'AND FMLPassword='" + getPassword + "'";
-            
-            //Rohan SQL Code
-            //string query = "SELECT name,FMLPassword from UserAdmin where name='" + getMail + "'AND FMLPassword='" + getPassword + "'";
+            //SqlConnection conn = new SqlConnection(@"Data Source=GWTN141-4;Initial Catalog=signUp;Integrated Security=True");
             SqlCommand sqlCommand = new SqlCommand(query, conn);
             SqlDataAdapter sda = new SqlDataAdapter(sqlCommand);
             DataTable dt = new DataTable();
