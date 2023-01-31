@@ -12,12 +12,18 @@ namespace CsharpForm
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
 
-            //Suyog Database
+            //Suyog laptop Database
             //SqlConnection conn = new SqlConnection(@"Data Source=GWTN141-4;Initial Catalog=signUp;Integrated Security=True");
-            SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-LHHH1S3\SQLEXPRESS;Initial Catalog=signUp;Integrated Security=True");
+            
+            //Suyog lab Database
+            //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-LHHH1S3\SQLEXPRESS;Initial Catalog=signUp;Integrated Security=True");
 
-            //Rohan Database
+
+            //Rohan lab Database
             //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-CLLMDVB\SQLEXPRESS;Initial Catalog=signUp;Integrated Security=True");
+            
+            //Rohan Legion database
+            SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-3ORSUC9H;Initial Catalog=signUp;Integrated Security=True");
 
             ApplicationConfiguration.Initialize();
             conn.Open();
@@ -28,11 +34,11 @@ namespace CsharpForm
             int count=Convert.ToInt32(sqlCommand.ExecuteScalar());
             if (count > 0)
             {
-                Application.Run(new Form2());
+                Application.Run(new Form1());
             }
             else
             {
-                Application.Run(new Form2());
+                Application.Run(new signUpForm());
             }
         }
     }

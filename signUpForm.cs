@@ -36,10 +36,16 @@ namespace CsharpForm
     {
         //Suyog Database
         //SqlConnection conn = new SqlConnection(@"Data Source=GWTN141-4;Initial Catalog=signUp;Integrated Security=True");
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-LHHH1S3\SQLEXPRESS;Initial Catalog=signUp;Integrated Security=True");
-
+        //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-LHHH1S3\SQLEXPRESS;Initial Catalog=signUp;Integrated Security=True");
+        
+        
         //Rohan Database
         //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-CLLMDVB\SQLEXPRESS;Initial Catalog=signUp;Integrated Security=True");
+
+        //Rohan Legion database
+        SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-3ORSUC9H;Initial Catalog=signUp;Integrated Security=True");
+
+
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
 
         private static extern IntPtr CreateRoundRectRgn
@@ -189,11 +195,17 @@ namespace CsharpForm
             else
             {
                 errorProvider1.Clear();
-                MessageBox.Show("Nice one");
+                MessageBox.Show("Sign Up Sucessfull!!");
                 /*(admin_name,contact_no,futsal_name,field_no,game_price,email ,admin_password)*/
                 string query = "Insert into signUp_Table values('" + AdminName + "','" + ContactNo + "','" + FutsalName + "','" + NoFields + "','" + GamePrice + "','" + Email + "','" + Password + "')";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.ExecuteNonQuery();
+                Form1 nextForm;
+                this.Hide();
+                nextForm = new Form1();
+                nextForm.Closed += (s, args) => this.Close();
+                nextForm.Show();
+
             }
             conn.Close();
         }

@@ -31,7 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(signUpForm));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.signUp2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -50,12 +52,10 @@
             this.gamePrice = new System.Windows.Forms.TextBox();
             this.Admin_Name = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.signUp2 = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -88,6 +88,17 @@
             this.panel2.TabIndex = 0;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(603, 254);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(26, 26);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 37;
+            this.pictureBox1.TabStop = false;
+            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(604, 528);
@@ -98,6 +109,20 @@
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // signUp2
+            // 
+            this.signUp2.BackColor = System.Drawing.Color.LimeGreen;
+            this.signUp2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.signUp2.Font = new System.Drawing.Font("Times New Roman", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.signUp2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.signUp2.Location = new System.Drawing.Point(199, 579);
+            this.signUp2.Name = "signUp2";
+            this.signUp2.Size = new System.Drawing.Size(283, 62);
+            this.signUp2.TabIndex = 9;
+            this.signUp2.Text = "Sign Up";
+            this.signUp2.UseVisualStyleBackColor = false;
+            this.signUp2.Click += new System.EventHandler(this.signUp_Click);
             // 
             // button1
             // 
@@ -114,13 +139,14 @@
             // 
             this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI Emoji", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox3.ForeColor = System.Drawing.Color.DimGray;
             this.textBox3.Location = new System.Drawing.Point(58, 322);
             this.textBox3.MaximumSize = new System.Drawing.Size(354, 60);
             this.textBox3.MinimumSize = new System.Drawing.Size(540, 40);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(540, 40);
-            this.textBox3.TabIndex = 7;
+            this.textBox3.TabIndex = 5;
             this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label3
@@ -155,11 +181,12 @@
             // 
             this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Segoe UI Emoji", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.textBox2.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox2.ForeColor = System.Drawing.Color.DimGray;
             this.textBox2.Location = new System.Drawing.Point(58, 254);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(342, 36);
-            this.textBox2.TabIndex = 5;
+            this.textBox2.TabIndex = 3;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged_1);
             // 
             // futsal
@@ -180,27 +207,29 @@
             // 
             this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI Emoji", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox1.ForeColor = System.Drawing.Color.DimGray;
             this.textBox1.Location = new System.Drawing.Point(58, 188);
             this.textBox1.MaximumSize = new System.Drawing.Size(354, 60);
             this.textBox1.MinimumSize = new System.Drawing.Size(540, 40);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(540, 40);
-            this.textBox1.TabIndex = 4;
+            this.textBox1.TabIndex = 2;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // confirm_TextBox
             // 
             this.confirm_TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.confirm_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.confirm_TextBox.Font = new System.Drawing.Font("Segoe UI Emoji", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.confirm_TextBox.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.confirm_TextBox.ForeColor = System.Drawing.Color.DimGray;
             this.confirm_TextBox.Location = new System.Drawing.Point(58, 520);
             this.confirm_TextBox.MaximumSize = new System.Drawing.Size(354, 60);
             this.confirm_TextBox.MinimumSize = new System.Drawing.Size(540, 40);
             this.confirm_TextBox.Name = "confirm_TextBox";
             this.confirm_TextBox.PasswordChar = '*';
             this.confirm_TextBox.Size = new System.Drawing.Size(540, 40);
-            this.confirm_TextBox.TabIndex = 10;
+            this.confirm_TextBox.TabIndex = 8;
             this.confirm_TextBox.TextChanged += new System.EventHandler(this.confirm_TextBox_TextChanged);
             // 
             // label7
@@ -235,27 +264,29 @@
             // 
             this.password_TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.password_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.password_TextBox.Font = new System.Drawing.Font("Segoe UI Emoji", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.password_TextBox.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.password_TextBox.ForeColor = System.Drawing.Color.DimGray;
             this.password_TextBox.Location = new System.Drawing.Point(58, 454);
             this.password_TextBox.MaximumSize = new System.Drawing.Size(354, 60);
             this.password_TextBox.MinimumSize = new System.Drawing.Size(540, 40);
             this.password_TextBox.Name = "password_TextBox";
             this.password_TextBox.PasswordChar = '*';
             this.password_TextBox.Size = new System.Drawing.Size(540, 40);
-            this.password_TextBox.TabIndex = 9;
+            this.password_TextBox.TabIndex = 7;
             this.password_TextBox.TextChanged += new System.EventHandler(this.password_TextBox_TextChanged);
             // 
             // email_TextBox
             // 
             this.email_TextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.email_TextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.email_TextBox.Font = new System.Drawing.Font("Segoe UI Emoji", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.email_TextBox.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.email_TextBox.ForeColor = System.Drawing.Color.DimGray;
             this.email_TextBox.Location = new System.Drawing.Point(58, 388);
             this.email_TextBox.MaximumSize = new System.Drawing.Size(354, 60);
             this.email_TextBox.MinimumSize = new System.Drawing.Size(540, 40);
             this.email_TextBox.Name = "email_TextBox";
             this.email_TextBox.Size = new System.Drawing.Size(540, 40);
-            this.email_TextBox.TabIndex = 8;
+            this.email_TextBox.TabIndex = 6;
             this.email_TextBox.TextChanged += new System.EventHandler(this.email_TextBox_TextChanged);
             // 
             // label5
@@ -303,18 +334,20 @@
             // 
             this.gamePrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.gamePrice.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.gamePrice.Font = new System.Drawing.Font("Segoe UI Emoji", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.gamePrice.Location = new System.Drawing.Point(435, 254);
+            this.gamePrice.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.gamePrice.ForeColor = System.Drawing.Color.DimGray;
+            this.gamePrice.Location = new System.Drawing.Point(427, 254);
             this.gamePrice.Name = "gamePrice";
-            this.gamePrice.Size = new System.Drawing.Size(163, 36);
-            this.gamePrice.TabIndex = 2;
+            this.gamePrice.Size = new System.Drawing.Size(171, 36);
+            this.gamePrice.TabIndex = 4;
             this.gamePrice.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // Admin_Name
             // 
             this.Admin_Name.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.Admin_Name.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Admin_Name.Font = new System.Drawing.Font("Segoe UI Emoji", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Admin_Name.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Admin_Name.ForeColor = System.Drawing.Color.DimGray;
             this.Admin_Name.Location = new System.Drawing.Point(59, 124);
             this.Admin_Name.Name = "Admin_Name";
             this.Admin_Name.Size = new System.Drawing.Size(539, 36);
@@ -334,34 +367,9 @@
             this.label1.Text = "Sign Up";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // signUp2
-            // 
-            this.signUp2.BackColor = System.Drawing.Color.LimeGreen;
-            this.signUp2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.signUp2.Font = new System.Drawing.Font("Times New Roman", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.signUp2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.signUp2.Location = new System.Drawing.Point(199, 579);
-            this.signUp2.Name = "signUp2";
-            this.signUp2.Size = new System.Drawing.Size(283, 62);
-            this.signUp2.TabIndex = 28;
-            this.signUp2.Text = "Sign Up";
-            this.signUp2.UseVisualStyleBackColor = false;
-            this.signUp2.Click += new System.EventHandler(this.signUp_Click);
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(603, 254);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(26, 26);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 37;
-            this.pictureBox1.TabStop = false;
             // 
             // signUpForm
             // 
@@ -378,8 +386,8 @@
             this.Load += new System.EventHandler(this.signUpForm_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }

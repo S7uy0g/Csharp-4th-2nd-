@@ -34,16 +34,17 @@
             this.password = new System.Windows.Forms.TextBox();
             this.logIn = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.email = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.signUp = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.signUp = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -69,8 +70,9 @@
             // 
             this.password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.password.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.password.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.password.Location = new System.Drawing.Point(30, 122);
+            this.password.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.password.ForeColor = System.Drawing.Color.DimGray;
+            this.password.Location = new System.Drawing.Point(26, 186);
             this.password.MinimumSize = new System.Drawing.Size(354, 40);
             this.password.Name = "password";
             this.password.PasswordChar = '*';
@@ -84,7 +86,7 @@
             this.logIn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.logIn.Font = new System.Drawing.Font("Times New Roman", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.logIn.ForeColor = System.Drawing.Color.White;
-            this.logIn.Location = new System.Drawing.Point(77, 188);
+            this.logIn.Location = new System.Drawing.Point(73, 239);
             this.logIn.Name = "logIn";
             this.logIn.Size = new System.Drawing.Size(283, 62);
             this.logIn.TabIndex = 8;
@@ -95,6 +97,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label1);
@@ -102,7 +105,6 @@
             this.panel1.Controls.Add(this.password);
             this.panel1.Controls.Add(this.logIn);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.signUp);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.button2);
@@ -114,6 +116,17 @@
             this.panel1.TabIndex = 9;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(140, 29);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(130, 50);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Log in";
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Transparent;
@@ -122,7 +135,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.Transparent;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(390, 122);
+            this.button1.Location = new System.Drawing.Point(386, 186);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(30, 29);
             this.button1.TabIndex = 17;
@@ -133,7 +146,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Emoji", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(30, 102);
+            this.label3.Location = new System.Drawing.Point(26, 166);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 20);
@@ -145,7 +158,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Emoji", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(30, 29);
+            this.label1.Location = new System.Drawing.Point(26, 93);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 20);
@@ -157,38 +170,25 @@
             // 
             this.email.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(242)))), ((int)(((byte)(242)))));
             this.email.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.email.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.email.Location = new System.Drawing.Point(30, 51);
+            this.email.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.email.ForeColor = System.Drawing.Color.DimGray;
+            this.email.Location = new System.Drawing.Point(26, 115);
             this.email.Margin = new System.Windows.Forms.Padding(2);
             this.email.Name = "email";
-            this.email.Size = new System.Drawing.Size(354, 32);
+            this.email.Size = new System.Drawing.Size(354, 36);
             this.email.TabIndex = 19;
             this.email.TextChanged += new System.EventHandler(this.email_TextChanged);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Black;
-            this.panel2.Location = new System.Drawing.Point(44, 297);
+            this.panel2.Location = new System.Drawing.Point(42, 314);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.MaximumSize = new System.Drawing.Size(1, 1);
             this.panel2.MinimumSize = new System.Drawing.Size(350, 1);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(350, 1);
             this.panel2.TabIndex = 16;
-            // 
-            // signUp
-            // 
-            this.signUp.BackColor = System.Drawing.Color.LimeGreen;
-            this.signUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.signUp.Font = new System.Drawing.Font("Times New Roman", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.signUp.ForeColor = System.Drawing.Color.White;
-            this.signUp.Location = new System.Drawing.Point(77, 305);
-            this.signUp.Name = "signUp";
-            this.signUp.Size = new System.Drawing.Size(283, 62);
-            this.signUp.TabIndex = 15;
-            this.signUp.Text = "SignUp";
-            this.signUp.UseVisualStyleBackColor = false;
-            this.signUp.Click += new System.EventHandler(this.signUp_Click);
             // 
             // label5
             // 
@@ -222,12 +222,14 @@
             // 
             this.button2.AllowDrop = true;
             this.button2.AutoSize = true;
-            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.BackColor = System.Drawing.Color.Crimson;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(147, 256);
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button2.Location = new System.Drawing.Point(100, 320);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(154, 39);
+            this.button2.Size = new System.Drawing.Size(226, 53);
             this.button2.TabIndex = 18;
             this.button2.Text = "Forget Password";
             this.button2.UseCompatibleTextRendering = true;
@@ -237,7 +239,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(-73, -28);
+            this.pictureBox2.Location = new System.Drawing.Point(-73, -25);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(561, 457);
@@ -245,6 +247,20 @@
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // signUp
+            // 
+            this.signUp.BackColor = System.Drawing.Color.LimeGreen;
+            this.signUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.signUp.Font = new System.Drawing.Font("Times New Roman", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.signUp.ForeColor = System.Drawing.Color.White;
+            this.signUp.Location = new System.Drawing.Point(655, 543);
+            this.signUp.Name = "signUp";
+            this.signUp.Size = new System.Drawing.Size(283, 62);
+            this.signUp.TabIndex = 15;
+            this.signUp.Text = "SignUp";
+            this.signUp.UseVisualStyleBackColor = false;
+            this.signUp.Click += new System.EventHandler(this.signUp_Click);
             // 
             // errorProvider1
             // 
@@ -264,6 +280,7 @@
             this.ClientSize = new System.Drawing.Size(1025, 653);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.signUp);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
@@ -299,5 +316,6 @@
         private ErrorProvider errorProvider1;
         private ErrorProvider errorProvider2;
         private TextBox email;
+        private Label label2;
     }
 }
