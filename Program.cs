@@ -21,11 +21,11 @@ namespace CsharpForm
             int count=Convert.ToInt32(sqlCommand.ExecuteScalar());
             if (count > 0)
             {
-                Application.Run(new Form1());
+                Application.Run(new Form2());
             }
             else
             {
-                Application.Run(new signUpForm());
+                Application.Run(new Form2());
             }
         }
     }
