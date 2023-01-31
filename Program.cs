@@ -13,7 +13,7 @@ namespace CsharpForm
             // see https://aka.ms/applicationconfiguration.
 
             //Suyog laptop Database
-            //SqlConnection conn = new SqlConnection(@"Data Source=GWTN141-4;Initial Catalog=signUp;Integrated Security=True");
+            SqlConnection conn = new SqlConnection(@"Data Source=GWTN141-4;Initial Catalog=signUp;Integrated Security=True");
             
             //Suyog lab Database
             //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-LHHH1S3\SQLEXPRESS;Initial Catalog=signUp;Integrated Security=True");
@@ -23,7 +23,7 @@ namespace CsharpForm
             //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-CLLMDVB\SQLEXPRESS;Initial Catalog=signUp;Integrated Security=True");
             
             //Rohan Legion database
-            SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-3ORSUC9H;Initial Catalog=signUp;Integrated Security=True");
+            //SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-3ORSUC9H;Initial Catalog=signUp;Integrated Security=True");
 
             ApplicationConfiguration.Initialize();
             conn.Open();
@@ -34,7 +34,7 @@ namespace CsharpForm
             int count=Convert.ToInt32(sqlCommand.ExecuteScalar());
             if (count > 0)
             {
-                Application.Run(new Form1());
+                Application.Run(new Form2());
             }
             else
             {

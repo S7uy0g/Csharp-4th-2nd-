@@ -35,19 +35,22 @@ namespace CsharpForm
                 pictureBox1.Image = Image.FromFile(openFileDialog.FileName);
                 pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             }
-            SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-LHHH1S3\SQLEXPRESS;Initial Catalog=signUp;Integrated Security=True");
+            SqlConnection conn = new SqlConnection(@"Data Source=GWTN141-4;Initial Catalog=signUp;Integrated Security=True");
+            //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-LHHH1S3\SQLEXPRESS;Initial Catalog=signUp;Integrated Security=True");
+            conn.Open();
             string queryString = "INSERT INTO Images (ImageName, ImageData) VALUES (@ImageName, @ImageData)";
-            using (SqlConnection connection = new SqlConnection(queryString))
-            {
-                connection.Open();
-
-                using (SqlCommand command = new SqlCommand(queryString, connection))
+            using (SqlCommand command = new SqlCommand(queryString, conn))
                 {
                     command.Parameters.AddWithValue("@ImageName",Path.GetFileName(openFileDialog.FileName));
                     command.Parameters.AddWithValue("@ImageData", Path.GetFullPath(openFileDialog.FileName));
                     command.ExecuteNonQuery();
                 }
-            }
+            conn.Close();
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
