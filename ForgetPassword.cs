@@ -15,8 +15,9 @@ namespace CsharpForm
    
     public partial class ForgetPassword : Form
     {
-        SqlConnection conn = new SqlConnection(@"Data Source = .\SQLEXPRESS; Initial Catalog = FMLProject; Integrated Security = True");
+        //SqlConnection conn = new SqlConnection(@"Data Source = .\SQLEXPRESS; Initial Catalog = FMLProject; Integrated Security = True");
         //SqlConnection conn = new SqlConnection(@"Data Source=GWTN141-4;Initial Catalog=FMLProject;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-LHHH1S3\SQLEXPRESS;Initial Catalog=signUp;Integrated Security=True");
         public ForgetPassword()
         {
             InitializeComponent();
@@ -42,20 +43,26 @@ namespace CsharpForm
             }
             else
             {
-                //string query1 = "Select Email From UserAdmin WHERE Email='" + getEmail + "'";
-                string query1 = "Select Email From User_Admin WHERE Email='" + getEmail + "'";
+                string query1 = "Select email From signUp_Table WHERE email='" + getEmail + "'";
                 /*SqlCommand cmd1 = new SqlCommand(query1, conn);
                 cmd1.ExecuteNonQuery();*/
                 SqlCommand sqlCommand = new SqlCommand(query1, conn);
                 string data = (string)sqlCommand.ExecuteScalar();
                 if (getEmail == data.ToString())
                 {
-                    string query2 = "UPDATE User_Admin SET Email='" + getEmail + "',contact='" + getPhoneNo + "',FMLPassword='" + getPassword + "' WHERE Email='" + getEmail + "'";
-                    //string query2 = "UPDATE UserAdmin SET Email='" + getEmail + "',PhoneNo='" + getPhoneNo + "',FMLPassword='" + getPassword + "' WHERE Email='" + getEmail + "'";
+                    string query2 = "UPDATE signUp_Table SET email='" + getEmail + "',contact_no='" + getPhoneNo + "',admin_password='" + getPassword + "' WHERE email='" + getEmail + "'";
                     SqlCommand cmd2 = new SqlCommand(query2, conn);
                     cmd2.ExecuteNonQuery();
                 }
                 MessageBox.Show("Updated Successfully");
+                Form1 nextForm;
+                this.Hide();
+                nextForm = new Form1();
+                /* nextForm.ShowDialog();
+                 this.Show();
+                 this.Hide();*/
+                nextForm.Closed += (s, args) => this.Close();
+                nextForm.Show();
                 conn.Close();
             }
             
@@ -65,16 +72,15 @@ namespace CsharpForm
         {
             conn.Open();
             string getContact = FindNo.Text;
-            //string query = "Select Email,PhoneNo From UserAdmin WHERE PhoneNo='" + getContact + "'";
-            string query = "Select Email,contact From User_Admin WHERE contact='" + getContact + "'";
+            string query = "Select email,contact_no From  signUp_Table WHERE contact_no='" + getContact + "'";
             SqlCommand sqlCommand = new SqlCommand(query, conn);
             SqlDataAdapter sda = new SqlDataAdapter(sqlCommand);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             if (dt.Rows.Count > 0)
             {
-                string data1 = dt.Rows[0]["Email"].ToString();
-                string data2 = dt.Rows[0]["contact"].ToString();
+                string data1 = dt.Rows[0]["email"].ToString();
+                string data2 = dt.Rows[0]["contact_no"].ToString();
                 //string data2 = dt.Rows[0]["PhoneNo"].ToString();
                 Email.Text = data1;
                 PhoneNo.Text = data2;
@@ -115,7 +121,7 @@ namespace CsharpForm
             conn.Open();
             string getPhone = FindNo.Text;
             //string query = "SELECT PhoneNO from UserAdmin where PhoneNo='" + getPhone + "'";
-            string query = "SELECT contact from User_Admin where contact='" + getPhone + "'";
+            string query = "SELECT contact_no from  signUp_Table where contact_no='" + getPhone + "'";
             SqlCommand sqlCommand = new SqlCommand(query, conn);
             SqlDataAdapter sda = new SqlDataAdapter(sqlCommand);
             DataTable dt = new DataTable();

@@ -54,7 +54,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 71);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 89);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(392, 286);
             this.pictureBox1.TabIndex = 0;
@@ -179,7 +179,7 @@
             // 
             // FindNo
             // 
-            this.FindNo.Location = new System.Drawing.Point(81, 42);
+            this.FindNo.Location = new System.Drawing.Point(77, 60);
             this.FindNo.Name = "FindNo";
             this.FindNo.Size = new System.Drawing.Size(235, 23);
             this.FindNo.TabIndex = 2;
@@ -188,7 +188,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 45);
+            this.label6.Location = new System.Drawing.Point(12, 63);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(63, 15);
             this.label6.TabIndex = 3;
@@ -197,7 +197,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(329, 42);
+            this.button2.Location = new System.Drawing.Point(329, 59);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 4;

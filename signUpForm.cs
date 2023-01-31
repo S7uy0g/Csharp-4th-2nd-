@@ -158,7 +158,7 @@ namespace CsharpForm
                 errorProvider1.SetError(password_TextBox, "Null");
                 errorProvider1.SetError(confirm_TextBox, "Null");
             }
-            else if(AdminName == string.Empty)
+           /* else if(AdminName == string.Empty)
             {
                 errorProvider1.SetError(Admin_Name, "Null");
             }
@@ -181,7 +181,7 @@ namespace CsharpForm
             else if (GamePrice == string.Empty)
             {
                 errorProvider1.SetError(gamePrice, "Null");
-            }
+            }*/
             else
             {
                 errorProvider1.Clear();

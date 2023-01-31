@@ -23,6 +23,10 @@ namespace CsharpForm
             {
                 Application.Run(new Form1());
             }
+            else
+            {
+                Application.Run(new signUpForm());
+            }
         }
     }
 }
