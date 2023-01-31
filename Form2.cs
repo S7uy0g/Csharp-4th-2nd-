@@ -30,12 +30,43 @@ namespace CsharpForm
             SqlDataAdapter sda = new SqlDataAdapter(command);
             DataTable dt = new DataTable();
             sda.Fill(dt);
-            openFileDialog.FileName = dt.Rows[0]["ImageData"].ToString();
-            pictureBox1.Visible = true;
-            pictureBox1.Invalidate();
-            pictureBox1.Parent.Refresh();
-            pictureBox1.Image = Image.FromFile(openFileDialog.FileName);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            if (dt.Rows.Count <= 0)
+            {
+                try
+                {
+                    Bitmap bmp = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+                    using (Graphics g = Graphics.FromImage(bmp))
+                    {
+                        g.Clear(Color.White);
+                    }
+                    pictureBox1.Image = bmp;
+                }
+                catch (ArgumentException ex)
+                {
+                    MessageBox.Show("Invalid image format: " + ex.Message);
+                }
+                catch (OutOfMemoryException ex)
+                {
+                    MessageBox.Show("Not enough memory to create image: " + ex.Message);
+                }
+                catch (FileNotFoundException ex)
+                {
+                    MessageBox.Show("File not found: " + ex.Message);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+            else
+            {
+                openFileDialog.FileName = dt.Rows[0]["ImageData"].ToString();
+                pictureBox1.Visible = true;
+                pictureBox1.Invalidate();
+                pictureBox1.Parent.Refresh();
+                pictureBox1.Image = Image.FromFile(openFileDialog.FileName);
+                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
             conn.Close();
         }
 
@@ -61,7 +92,7 @@ namespace CsharpForm
                 pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             }
             conn.Open();
-            string query = "SELECT count(*) from signUp_Table";
+            string query = "SELECT count(*) from Images";
             SqlCommand sqlCommand = new SqlCommand(query, conn);
             int count = Convert.ToInt32(sqlCommand.ExecuteScalar());
             if (count > 0)
@@ -84,7 +115,7 @@ namespace CsharpForm
                     command.ExecuteNonQuery();
                 }
             }
-            conn.Close();
+        conn.Close();
         }
 
         private void Form2_Load(object sender, EventArgs e)
