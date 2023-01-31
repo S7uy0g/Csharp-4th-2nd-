@@ -39,10 +39,10 @@ namespace CsharpForm
             else
             {
                 Application.Run(new signUpForm());
-            }*/
+            }
 
-            ApplicationConfiguration.Initialize();
-            Application.Run(new MainMenu());
+            /*ApplicationConfiguration.Initialize();
+            Application.Run(new MainMenu());*/
         }
     }
 }

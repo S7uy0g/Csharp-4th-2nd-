@@ -81,7 +81,6 @@ namespace CsharpForm
             if (dt.Rows.Count > 0)
             {
                 string data1 = dt.Rows[0]["email"].ToString();
-                //string data1 = dt.Rows[0]["name"].ToString();
                 string data2 = dt.Rows[0]["admin_password"].ToString();
                 if (getMail == data1 && getPassword == data2)
                 {
