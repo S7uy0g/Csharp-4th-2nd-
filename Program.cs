@@ -21,7 +21,7 @@ namespace CsharpForm
 
             //Rohan lab Database
             //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-CLLMDVB\SQLEXPRESS;Initial Catalog=signUp;Integrated Security=True");
-            
+
             //Rohan Legion database
             //SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-3ORSUC9H;Initial Catalog=signUp;Integrated Security=True");
 
@@ -39,7 +39,10 @@ namespace CsharpForm
             else
             {
                 Application.Run(new signUpForm());
-            }
+            }*/
+
+            ApplicationConfiguration.Initialize();
+            Application.Run(new MainMenu());
         }
     }
 }
