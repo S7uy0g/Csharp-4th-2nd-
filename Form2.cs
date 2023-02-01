@@ -15,9 +15,9 @@ namespace CsharpForm
     public partial class Form2 : Form
     {
         //Suyog Database
-        SqlConnection conn = new SqlConnection(@"Data Source=GWTN141-4;Initial Catalog=signUp;Integrated Security=True");
+        //SqlConnection conn = new SqlConnection(@"Data Source=GWTN141-4;Initial Catalog=signUp;Integrated Security=True");
         //Suyog college database
-        //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-LHHH1S3\SQLEXPRESS;Initial Catalog=signUp;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-LHHH1S3\SQLEXPRESS;Initial Catalog=signUp;Integrated Security=True");
         //Rohan Legion database
         //SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-3ORSUC9H;Initial Catalog=signUp;Integrated Security=True");
         public Form2()
@@ -34,12 +34,12 @@ namespace CsharpForm
             {
                 try
                 {
-                    Bitmap bmp = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+                   /* Bitmap bmp = new Bitmap(pictureBox1.Width, pictureBox1.Height);
                     using (Graphics g = Graphics.FromImage(bmp))
                     {
                         g.Clear(Color.White);
-                    }
-                    pictureBox1.Image = bmp;
+                    }*/
+                    pictureBox1.Image = Properties.Resources.istockphoto_845329690_612x612;
                 }
                 catch (ArgumentException ex)
                 {
@@ -64,8 +64,15 @@ namespace CsharpForm
                 pictureBox1.Visible = true;
                 pictureBox1.Invalidate();
                 pictureBox1.Parent.Refresh();
-                pictureBox1.Image = Image.FromFile(openFileDialog.FileName);
-                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                try
+                {
+                    pictureBox1.Image = Image.FromFile(openFileDialog.FileName);
+                    pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
             conn.Close();
         }
@@ -81,6 +88,7 @@ namespace CsharpForm
 );*/
         private void button1_Click(object sender, EventArgs e)
         {
+            top:
             pictureBox1.Visible = true;
             OpenFileDialog openFileDialog = new OpenFileDialog();
             /*pictureBox1.Invalidate();*/
@@ -88,8 +96,17 @@ namespace CsharpForm
             openFileDialog.Filter = "Image Files (*.bmp, *.jpg, *.jpeg, *.png)|*.bmp;*.jpg;*.jpeg;*.png";
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                pictureBox1.Image = Image.FromFile(openFileDialog.FileName);
-                pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                try
+                {
+                    pictureBox1.Image = Image.FromFile(openFileDialog.FileName);
+                    pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    goto top;
+                }
+               
             }
             conn.Open();
             string query = "SELECT count(*) from Images";
