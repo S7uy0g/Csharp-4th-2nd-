@@ -84,9 +84,9 @@ namespace CsharpForm
                 string data2 = dt.Rows[0]["admin_password"].ToString();
                 if (getMail == data1 && getPassword == data2)
                 {
-                    MainMenu nextForm;
+                    Mainmenu nextForm;
                     this.Hide();
-                    nextForm = new MainMenu();
+                    nextForm = new Mainmenu();
                    /* nextForm.ShowDialog();
                     this.Show();
                     this.Hide();*/
