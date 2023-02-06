@@ -409,7 +409,7 @@
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.BackColor = System.Drawing.Color.LightGray;
             this.panel5.Controls.Add(this.dataGridView1);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 0);
@@ -417,17 +417,18 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1887, 900);
             this.panel5.TabIndex = 0;
+            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(99, 53);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.errorProvider1.SetIconAlignment(this.dataGridView1, System.Windows.Forms.ErrorIconAlignment.TopLeft);
+            this.dataGridView1.Location = new System.Drawing.Point(69, 46);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(1686, 753);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.RowTemplate.Height = 33;
+            this.dataGridView1.Size = new System.Drawing.Size(360, 225);
+            this.dataGridView1.TabIndex = 1;
             // 
             // errorProvider1
             // 
@@ -480,12 +481,12 @@
         private Button button3;
         private Button button4;
         private Label label7;
-        private DataGridView dataGridView1;
         private ComboBox SMin;
         private ComboBox SHour;
         private ComboBox EAMPM;
         private ComboBox EMin;
         private ComboBox Ehour;
         private ErrorProvider errorProvider1;
+        private DataGridView dataGridView1;
     }
 }

@@ -85,5 +85,23 @@ namespace CsharpForm
         {
 
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+            conn.Open();
+            dataGridView1.Refresh();
+            string query = "Select fullName,Contact,BookingDate,GStart,GEnd from Booking";
+            SqlCommand sqlCommand = new SqlCommand(query, conn);
+            SqlDataAdapter sda = new SqlDataAdapter(sqlCommand);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dataGridView1.DataSource = dt;
+            conn.Close();
+        }
     }
 }
