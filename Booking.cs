@@ -63,10 +63,27 @@ namespace CsharpForm
             string getName=FullName.Text;
             string getContact=Contact.Text;
             string getDate = dateTimePicker1.Value.ToString();
-            string query = "Insert into Booking values('" + getName + "','" + getContact + "','" + getDate + "')";
+            int getStartH = Int32.Parse(SHour.Text);
+            int getStartM = Int32.Parse(SMin.Text);
+            string getSAMPM =SAMPM.Text;
+            int getEndH = Int32.Parse(Ehour.Text);
+            int getEndM=Int32.Parse(EMin.Text);
+            string getEAMPM = EAMPM.Text;
+            string getStart = getStartH.ToString()+":"+getStartM.ToString()+getSAMPM;
+            string getEnd = getEndH.ToString() + ":" + getEndM.ToString()+getEAMPM;
+            /*if (getStartH > 12)
+            {
+                errorProvider1.SetError(SHour, "Wrong Input");
+            }*/
+            string query = "Insert into Booking values('" + getName + "','" + getContact + "','" + getDate + "','" + getStartH + "','"+ getStartM + "','"+ getSAMPM + "','" + getEndH + "','"+ getEndM + "','"+ getEAMPM + "','"+ getStart + "','"+ getEnd +"')";
             SqlCommand cmd = new SqlCommand(query, conn);
             cmd.ExecuteNonQuery();
             conn.Close();
+        }
+
+        private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

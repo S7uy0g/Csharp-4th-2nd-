@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
@@ -36,10 +37,15 @@
             this.button2 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.EAMPM = new System.Windows.Forms.ComboBox();
+            this.EMin = new System.Windows.Forms.ComboBox();
+            this.Ehour = new System.Windows.Forms.ComboBox();
+            this.SMin = new System.Windows.Forms.ComboBox();
+            this.SHour = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.SAMPM = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -51,14 +57,14 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -81,10 +87,10 @@
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.textBox3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(1231, 0);
+            this.panel2.Location = new System.Drawing.Point(1430, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(656, 608);
+            this.panel2.Size = new System.Drawing.Size(457, 608);
             this.panel2.TabIndex = 0;
             // 
             // label7
@@ -94,7 +100,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(130, 5);
+            this.label7.Location = new System.Drawing.Point(30, 5);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(357, 74);
@@ -154,12 +160,15 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.textBox2);
-            this.panel3.Controls.Add(this.textBox1);
+            this.panel3.Controls.Add(this.EAMPM);
+            this.panel3.Controls.Add(this.EMin);
+            this.panel3.Controls.Add(this.Ehour);
+            this.panel3.Controls.Add(this.SMin);
+            this.panel3.Controls.Add(this.SHour);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.comboBox1);
+            this.panel3.Controls.Add(this.SAMPM);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.dateTimePicker1);
@@ -171,8 +180,78 @@
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1236, 608);
+            this.panel3.Size = new System.Drawing.Size(1433, 608);
             this.panel3.TabIndex = 1;
+            // 
+            // EAMPM
+            // 
+            this.EAMPM.FormattingEnabled = true;
+            this.EAMPM.Items.AddRange(new object[] {
+            "AM",
+            "PM"});
+            this.EAMPM.Location = new System.Drawing.Point(908, 337);
+            this.EAMPM.Name = "EAMPM";
+            this.EAMPM.Size = new System.Drawing.Size(115, 33);
+            this.EAMPM.TabIndex = 15;
+            this.EAMPM.SelectedIndexChanged += new System.EventHandler(this.comboBox6_SelectedIndexChanged);
+            // 
+            // EMin
+            // 
+            this.EMin.FormattingEnabled = true;
+            this.EMin.Location = new System.Drawing.Point(768, 337);
+            this.EMin.Name = "EMin";
+            this.EMin.Size = new System.Drawing.Size(95, 33);
+            this.EMin.TabIndex = 14;
+            // 
+            // Ehour
+            // 
+            this.Ehour.FormattingEnabled = true;
+            this.Ehour.Location = new System.Drawing.Point(654, 337);
+            this.Ehour.Name = "Ehour";
+            this.Ehour.Size = new System.Drawing.Size(108, 33);
+            this.Ehour.TabIndex = 13;
+            // 
+            // SMin
+            // 
+            this.SMin.FormattingEnabled = true;
+            this.SMin.Items.AddRange(new object[] {
+            "00",
+            "05",
+            "10",
+            "15",
+            "20",
+            "25",
+            "30",
+            "35",
+            "40",
+            "45",
+            "50",
+            "55"});
+            this.SMin.Location = new System.Drawing.Point(768, 287);
+            this.SMin.Name = "SMin";
+            this.SMin.Size = new System.Drawing.Size(95, 33);
+            this.SMin.TabIndex = 12;
+            // 
+            // SHour
+            // 
+            this.SHour.FormattingEnabled = true;
+            this.SHour.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
+            this.SHour.Location = new System.Drawing.Point(654, 287);
+            this.SHour.Name = "SHour";
+            this.SHour.Size = new System.Drawing.Size(108, 33);
+            this.SHour.TabIndex = 11;
             // 
             // label6
             // 
@@ -181,7 +260,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(576, 5);
+            this.label6.Location = new System.Drawing.Point(674, 5);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(378, 74);
@@ -196,7 +275,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(201, 389);
+            this.button1.Location = new System.Drawing.Point(299, 389);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(443, 102);
@@ -212,26 +291,26 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(445, 555);
+            this.label5.Location = new System.Drawing.Point(543, 555);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(635, 32);
             this.label5.TabIndex = 9;
             this.label5.Text = "*****************Opening Time - 6am-8pm*****************";
             // 
-            // comboBox1
+            // SAMPM
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.SAMPM.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SAMPM.FormattingEnabled = true;
+            this.SAMPM.Items.AddRange(new object[] {
             "AM",
             "PM"});
-            this.comboBox1.Location = new System.Drawing.Point(825, 270);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(115, 48);
-            this.comboBox1.TabIndex = 7;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.SAMPM.Location = new System.Drawing.Point(908, 272);
+            this.SAMPM.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.SAMPM.Name = "SAMPM";
+            this.SAMPM.Size = new System.Drawing.Size(115, 48);
+            this.SAMPM.TabIndex = 7;
+            this.SAMPM.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -350,19 +429,9 @@
             this.dataGridView1.Size = new System.Drawing.Size(1686, 753);
             this.dataGridView1.TabIndex = 0;
             // 
-            // textBox1
+            // errorProvider1
             // 
-            this.textBox1.Location = new System.Drawing.Point(654, 287);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(150, 31);
-            this.textBox1.TabIndex = 11;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(654, 339);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(150, 31);
-            this.textBox2.TabIndex = 12;
+            this.errorProvider1.ContainerControl = this;
             // 
             // Booking
             // 
@@ -382,6 +451,7 @@
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -401,7 +471,7 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Panel panel4;
         private Panel panel5;
-        private ComboBox comboBox1;
+        private ComboBox SAMPM;
         private Label label5;
         private Button button1;
         private Label label6;
@@ -411,7 +481,11 @@
         private Button button4;
         private Label label7;
         private DataGridView dataGridView1;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private ComboBox SMin;
+        private ComboBox SHour;
+        private ComboBox EAMPM;
+        private ComboBox EMin;
+        private ComboBox Ehour;
+        private ErrorProvider errorProvider1;
     }
 }
