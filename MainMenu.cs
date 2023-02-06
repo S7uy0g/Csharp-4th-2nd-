@@ -57,5 +57,15 @@ namespace CsharpForm
             employee1.Hide();
             inventory1.Show();
         }
+
+        private void Mainmenu_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void inventory1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
