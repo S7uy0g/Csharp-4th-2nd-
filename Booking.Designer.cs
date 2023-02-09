@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.findBox = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.EAMPM = new System.Windows.Forms.ComboBox();
             this.EMin = new System.Windows.Forms.ComboBox();
@@ -84,7 +85,7 @@
             this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.textBox3);
+            this.panel2.Controls.Add(this.findBox);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(839, 0);
             this.panel2.Name = "panel2";
@@ -130,6 +131,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "Modify";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -141,16 +143,17 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "Find";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // textBox3
+            // findBox
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox3.ForeColor = System.Drawing.Color.DimGray;
-            this.textBox3.Location = new System.Drawing.Point(33, 171);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(311, 32);
-            this.textBox3.TabIndex = 0;
+            this.findBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.findBox.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.findBox.ForeColor = System.Drawing.Color.DimGray;
+            this.findBox.Location = new System.Drawing.Point(33, 171);
+            this.findBox.Name = "findBox";
+            this.findBox.Size = new System.Drawing.Size(311, 32);
+            this.findBox.TabIndex = 0;
             // 
             // panel3
             // 
@@ -408,12 +411,14 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.errorProvider1.SetIconAlignment(this.dataGridView1, System.Windows.Forms.ErrorIconAlignment.TopLeft);
-            this.dataGridView1.Location = new System.Drawing.Point(88, 18);
+            this.dataGridView1.Location = new System.Drawing.Point(63, 42);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(651, 206);
+            this.dataGridView1.Size = new System.Drawing.Size(686, 243);
             this.dataGridView1.TabIndex = 1;
             // 
             // errorProvider1
@@ -462,7 +467,7 @@
         private Button button1;
         private Label label6;
         private Button button2;
-        private TextBox textBox3;
+        private TextBox findBox;
         private Button button3;
         private Button button4;
         private Label label7;
