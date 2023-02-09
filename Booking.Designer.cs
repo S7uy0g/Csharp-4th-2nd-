@@ -70,7 +70,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.LightGray;
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -147,6 +147,7 @@
             // 
             // findBox
             // 
+            this.findBox.BackColor = System.Drawing.SystemColors.Control;
             this.findBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.findBox.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.findBox.ForeColor = System.Drawing.Color.DimGray;
@@ -290,7 +291,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(103, 335);
+            this.label5.Location = new System.Drawing.Point(114, 344);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(429, 21);
             this.label5.TabIndex = 9;
@@ -298,14 +299,14 @@
             // 
             // SAMPM
             // 
-            this.SAMPM.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.SAMPM.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.SAMPM.FormattingEnabled = true;
             this.SAMPM.Items.AddRange(new object[] {
             "AM",
             "PM"});
-            this.SAMPM.Location = new System.Drawing.Point(514, 173);
+            this.SAMPM.Location = new System.Drawing.Point(514, 181);
             this.SAMPM.Name = "SAMPM";
-            this.SAMPM.Size = new System.Drawing.Size(82, 33);
+            this.SAMPM.Size = new System.Drawing.Size(82, 23);
             this.SAMPM.TabIndex = 7;
             this.SAMPM.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -336,6 +337,7 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.SystemColors.Control;
             this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.dateTimePicker1.Location = new System.Drawing.Point(19, 182);
             this.dateTimePicker1.Name = "dateTimePicker1";
@@ -357,6 +359,7 @@
             // 
             // Contact
             // 
+            this.Contact.BackColor = System.Drawing.SystemColors.Control;
             this.Contact.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Contact.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Contact.ForeColor = System.Drawing.Color.DimGray;
@@ -379,6 +382,7 @@
             // 
             // FullName
             // 
+            this.FullName.BackColor = System.Drawing.SystemColors.Control;
             this.FullName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.FullName.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FullName.ForeColor = System.Drawing.Color.DimGray;
@@ -395,6 +399,7 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1321, 718);
             this.panel4.TabIndex = 1;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // panel5
             // 
@@ -420,6 +425,7 @@
             this.dataGridView1.RowTemplate.Height = 33;
             this.dataGridView1.Size = new System.Drawing.Size(686, 243);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
             // errorProvider1
             // 
