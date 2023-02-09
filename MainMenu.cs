@@ -44,6 +44,7 @@ namespace CsharpForm
 
         private void button3_Click(object sender, EventArgs e)
         {
+
             home1.Hide();
             booking1.Hide();
             employee1.Show();
@@ -60,7 +61,9 @@ namespace CsharpForm
 
         private void Mainmenu_Load(object sender, EventArgs e)
         {
-
+            home1.BackColor = Color.White;
+            employee1.BackColor = Color.White;
+            inventory1.BackColor = Color.White;
         }
 
         private void inventory1_Load(object sender, EventArgs e)
