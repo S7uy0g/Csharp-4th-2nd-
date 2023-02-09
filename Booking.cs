@@ -30,13 +30,13 @@ namespace CsharpForm
     {
         //Suyog Lab Database
         //SqlConnection conn = new SqlConnection(@"Data Source=GWTN141-4;Initial Catalog=signUp;Integrated Security=True");
-        //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-LHHH1S3\SQLEXPRESS;Initial Catalog=signUp;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-LHHH1S3\SQLEXPRESS;Initial Catalog=signUp;Integrated Security=True");
 
 
 
         //Rohan Legion database
         //SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-3ORSUC9H;Initial Catalog=signUp;Integrated Security=True");
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-CLLMDVB\SQLEXPRESS;Initial Catalog=signUp;Integrated Security=True");
+        //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-CLLMDVB\SQLEXPRESS;Initial Catalog=signUp;Integrated Security=True");
         public Booking()
         {
             InitializeComponent();
@@ -122,6 +122,50 @@ namespace CsharpForm
         private void label7_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            string getFind = findBox.Text;
+            string query = "Select fullName,Contact,BookingDate,SHour,SMin,SAMPM,EHour,EMin,EAMPM from Booking where Contact='" + getFind + "'";
+            SqlCommand sqlCommand = new SqlCommand(query, conn);
+            SqlDataAdapter sda = new SqlDataAdapter(sqlCommand);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            if (dt.Rows.Count > 0)
+            {
+                string getFullName = dt.Rows[0]["fullName"].ToString();
+                string getContact = dt.Rows[0]["Contact"].ToString();
+                string getBookingDate = dt.Rows[0]["BookingDate"].ToString();
+                DateTime DT = DateTime.Parse(getBookingDate);
+                string getSHour = dt.Rows[0]["SHour"].ToString();
+                string getSMin = dt.Rows[0]["SMin"].ToString();
+                string getSAMPM = dt.Rows[0]["SAMPM"].ToString();
+                string getEHour = dt.Rows[0]["EHour"].ToString();
+                string getEMin = dt.Rows[0]["EMin"].ToString();
+                string getEAMPM = dt.Rows[0]["EAMPM"].ToString();
+                FullName.Text = getFullName;
+                Contact.Text = getContact;
+                dateTimePicker1.Value = DT;
+                SHour.Text = getSHour;
+                SMin.Text = getSMin;
+                SAMPM.Text = getSAMPM;
+                Ehour.Text = getEHour;
+                EMin.Text = getEMin;
+                EAMPM.Text = getEAMPM;
+                //string Uquery = "Update Booking set fullName='" + FullName.Text + "',Contact='" + Contact.Text + "',BookingDate='" + dateTimePicker1.Value.ToString() + "',SHour='" + SHour.Text + "',SMin='" + SMin.Text + "',SAMPM,EHour,EMin,EAMPM ";
+            }
+            else
+            {
+                errorProvider1.SetError(findBox, "No Such Data");
+            }
+            conn.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }
