@@ -108,6 +108,11 @@ namespace CsharpForm
 
         private void panel5_Paint(object sender, PaintEventArgs e)
         {
+            DisplayData();
+        }
+
+        private void DisplayData()
+        {
             conn.Open();
             dataGridView1.Refresh();
             string query = "Select fullName,Contact,BookingDate,GStart,GEnd from Booking";
@@ -139,22 +144,25 @@ namespace CsharpForm
                 string getContact = dt.Rows[0]["Contact"].ToString();
                 string getBookingDate = dt.Rows[0]["BookingDate"].ToString();
                 DateTime DT = DateTime.Parse(getBookingDate);
-                string getSHour = dt.Rows[0]["SHour"].ToString();
-                string getSMin = dt.Rows[0]["SMin"].ToString();
+                string getPSHour = dt.Rows[0]["SHour"].ToString();
+                string getPSMin = dt.Rows[0]["SMin"].ToString();
                 string getSAMPM = dt.Rows[0]["SAMPM"].ToString();
-                string getEHour = dt.Rows[0]["EHour"].ToString();
-                string getEMin = dt.Rows[0]["EMin"].ToString();
+                string getPEHour = dt.Rows[0]["EHour"].ToString();
+                string getPEMin = dt.Rows[0]["EMin"].ToString();
                 string getEAMPM = dt.Rows[0]["EAMPM"].ToString();
+               /* int getSHour = Int32.Parse(getPSHour);
+                int getSMin = Int32.Parse(getPSMin);
+                int getEHour = Int32.Parse(getPEHour);
+                int getEMin = Int32.Parse(getPEMin);*/
                 FullName.Text = getFullName;
                 Contact.Text = getContact;
                 dateTimePicker1.Value = DT;
-                SHour.Text = getSHour;
-                SMin.Text = getSMin;
+                SHour.Text = getPSHour;
+                SMin.Text = getPSMin;
                 SAMPM.Text = getSAMPM;
-                Ehour.Text = getEHour;
-                EMin.Text = getEMin;
+                Ehour.Text = getPEHour;
+                EMin.Text = getPEMin;
                 EAMPM.Text = getEAMPM;
-                //string Uquery = "Update Booking set fullName='" + FullName.Text + "',Contact='" + Contact.Text + "',BookingDate='" + dateTimePicker1.Value.ToString() + "',SHour='" + SHour.Text + "',SMin='" + SMin.Text + "',SAMPM,EHour,EMin,EAMPM ";
             }
             else
             {
@@ -165,7 +173,15 @@ namespace CsharpForm
 
         private void button3_Click(object sender, EventArgs e)
         {
-           
+            conn.Open();
+            string Gstart = SHour.Text + ":" + SMin.Text + SAMPM.Text;
+            string Gend = Ehour.Text + ":" + EMin.Text + EAMPM.Text;
+            string Uquery = "Update Booking set fullName='" + FullName.Text + "',Contact='" + Contact.Text + "',BookingDate='" + dateTimePicker1.Value.ToString() + "',SHour='" + Int32.Parse(SHour.Text) + "',SMin='" + Int32.Parse(SMin.Text) + "',SAMPM='"+ SAMPM.Text +"',EHour='"+ Int32.Parse(Ehour.Text)+"',EMin='"+ Int32.Parse(EMin.Text)+"',EAMPM='"+EAMPM.Text+ "',GStart='" + Gstart + "',GEnd='" + Gend + "'";
+            SqlCommand cmd = new SqlCommand(Uquery, conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+            DisplayData();
+
         }
     }
 }
