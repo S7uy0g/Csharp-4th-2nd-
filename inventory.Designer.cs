@@ -281,7 +281,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Name = "inventory";
-            this.Size = new System.Drawing.Size(1089, 549);
+            this.Size = new System.Drawing.Size(1089, 550);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
