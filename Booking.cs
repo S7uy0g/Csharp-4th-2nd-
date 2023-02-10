@@ -36,8 +36,8 @@ namespace CsharpForm
     public partial class Booking : UserControl
     {
         //Suyog Lab Database
-        //SqlConnection conn = new SqlConnection(@"Data Source=GWTN141-4;Initial Catalog=BookingDB;Integrated Security=True");
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-LHHH1S3\SQLEXPRESS;Initial Catalog=BookingDB;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=GWTN141-4;Initial Catalog=BookingDB;Integrated Security=True");
+        //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-LHHH1S3\SQLEXPRESS;Initial Catalog=BookingDB;Integrated Security=True");
 
 
 
@@ -81,7 +81,6 @@ namespace CsharpForm
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            conn.Open();
             errorProvider1.Clear();
             string getName=FullName.Text;
             string getContact=Contact.Text;
@@ -102,27 +101,58 @@ namespace CsharpForm
             }
             else
             {
-                 string query = "Select BookingDate,GameStart,GameEnd from Booking where GameStart<='"+gStart+"' AND GameEnd>='"+gEnd+"'";
-                 SqlCommand sqlCommand = new SqlCommand(query, conn);
-                 SqlDataAdapter sda = new SqlDataAdapter(sqlCommand);
-                 DataTable dt = new DataTable();
-                 sda.Fill(dt);
-                 if (dt.Rows.Count>0)
-                 {
-                     errorProvider1.SetError(label4,"Booking Exists");
-                 }
-                 else
-                 {
-                    string query1 = "Insert into Booking values('" + getName + "','" + getContact + "','" + getDate + "','" + getStartH + "','" + getStartM + "','" + getSAMPM + "','" + getEndH + "','" + getEndM + "','" + getEAMPM + "','" + gStart + "','" + gEnd + "','" + getStart + "','" + getEnd + "')";
-                    SqlCommand cmd = new SqlCommand(query1, conn);
-                    cmd.ExecuteNonQuery();
-                    conn.Close();
-                    int hrs = gEnd.Hour - gStart.Hour;
-                    int price = 1500 * hrs;
-                    MessageBox.Show("Your Total Price is "+price);
-                    DisplayData();
+                conn.Open();
+                string query = "Select BookingDate,GameStart,GameEnd from Booking where GameStart<='"+gStart+"' AND GameEnd>'"+gStart+"'";
+                SqlCommand sqlCommand = new SqlCommand(query, conn);
+                SqlDataAdapter sda = new SqlDataAdapter(sqlCommand);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                conn.Close();
+                if (dt.Rows.Count > 0)
+                {
+                    errorProvider1.SetError(label4, "Booking Exists");
                 }
-                
+                else
+                {
+                    conn.Open();
+                    string query1 = "Select BookingDate,GameStart,GameEnd from Booking where GameStart<'" + gEnd + "' AND GameEnd>='" + gEnd + "'";
+                    SqlCommand sqlCommand1 = new SqlCommand(query1, conn);
+                    SqlDataAdapter sda1 = new SqlDataAdapter(sqlCommand1);
+                    DataTable dt1 = new DataTable();
+                    sda1.Fill(dt1);
+                    conn.Close();
+                    if (dt1.Rows.Count > 0)
+                    {
+                        errorProvider1.SetError(label4, "Booking Exists");
+                    }
+                    else
+                    {
+                        conn.Open();
+                        string query2 = "Select BookingDate,GameStart,GameEnd from Booking where GameStart>='" + gStart + "' AND GameEnd<='" + gEnd + "'";
+                        SqlCommand sqlCommand2 = new SqlCommand(query2, conn);
+                        SqlDataAdapter sda2 = new SqlDataAdapter(sqlCommand2);
+                        DataTable dt2 = new DataTable();
+                        sda1.Fill(dt2);
+                        conn.Close();
+                        if (dt2.Rows.Count > 0)
+                        {
+                            errorProvider1.SetError(label4, "Booking Exists");
+                        }
+                        else
+                        {
+                            conn.Open();
+                            string query3 = "Insert into Booking values('" + getName + "','" + getContact + "','" + getDate + "','" + getStartH + "','" + getStartM + "','" + getSAMPM + "','" + getEndH + "','" + getEndM + "','" + getEAMPM + "','" + gStart + "','" + gEnd + "','" + getStart + "','" + getEnd + "')";
+                            SqlCommand cmd = new SqlCommand(query3, conn);
+                            cmd.ExecuteNonQuery();
+                            int hrs = gEnd.Hour - gStart.Hour;
+                            int price = 1500 * hrs;
+                            MessageBox.Show("Your Total Price is " + price);
+                            DisplayData();
+                            conn.Close();
+                        }
+                    }
+                }
+
             }
         }
 
@@ -163,6 +193,7 @@ namespace CsharpForm
 
         private void DisplayData()
         {
+            conn.Close();
             conn.Open();
             dataGridView1.Refresh();
             string query = "Select fullName,Contact,BookingDate,Game_Start,Game_End from Booking";
