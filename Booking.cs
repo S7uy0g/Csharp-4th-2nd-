@@ -37,13 +37,13 @@ namespace CsharpForm
     {
         //Suyog Lab Database
         //SqlConnection conn = new SqlConnection(@"Data Source=GWTN141-4;Initial Catalog=BookingDB;Integrated Security=True");
-        //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-LHHH1S3\SQLEXPRESS;Initial Catalog=signUp;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-LHHH1S3\SQLEXPRESS;Initial Catalog=BookingDB;Integrated Security=True");
 
 
 
         //Rohan Legion database
         //SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-3ORSUC9H;Initial Catalog=signUp;Integrated Security=True");
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-CLLMDVB\SQLEXPRESS;Initial Catalog=signUp;Integrated Security=True");
+        //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-CLLMDVB\SQLEXPRESS;Initial Catalog=signUp;Integrated Security=True");
         public Booking()
         {
             InitializeComponent();
@@ -82,6 +82,7 @@ namespace CsharpForm
         private void button1_Click_1(object sender, EventArgs e)
         {
             conn.Open();
+            errorProvider1.Clear();
             string getName=FullName.Text;
             string getContact=Contact.Text;
             string getDate = dateTimePicker1.Value.ToString();
@@ -116,6 +117,9 @@ namespace CsharpForm
                     SqlCommand cmd = new SqlCommand(query1, conn);
                     cmd.ExecuteNonQuery();
                     conn.Close();
+                    int hrs = gEnd.Hour - gStart.Hour;
+                    int price = 1500 * hrs;
+                    MessageBox.Show("Your Total Price is "+price);
                     DisplayData();
                 }
                 
@@ -135,7 +139,7 @@ namespace CsharpForm
         private void panel5_Paint(object sender, PaintEventArgs e)
         {
             DisplayData();
-            conn.Open();
+           /* conn.Open();
             string getStartH = SHour.Text;
             string getStartM = SMin.Text;
             string getSAMPM = SAMPM.Text;
@@ -154,7 +158,7 @@ namespace CsharpForm
             if (dt.Rows.Count > 0)
             {
                errorProvider1.SetError(label4, "Booking Exists");
-            }
+            }*/
         }
 
         private void DisplayData()
