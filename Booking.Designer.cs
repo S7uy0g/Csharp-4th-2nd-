@@ -195,6 +195,19 @@
             // EMin
             // 
             this.EMin.FormattingEnabled = true;
+            this.EMin.Items.AddRange(new object[] {
+            "00",
+            "05",
+            "10",
+            "15",
+            "20",
+            "25",
+            "30",
+            "35",
+            "40",
+            "45",
+            "50",
+            "55"});
             this.EMin.Location = new System.Drawing.Point(416, 212);
             this.EMin.Margin = new System.Windows.Forms.Padding(2);
             this.EMin.Name = "EMin";
@@ -204,6 +217,19 @@
             // Ehour
             // 
             this.Ehour.FormattingEnabled = true;
+            this.Ehour.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
             this.Ehour.Location = new System.Drawing.Point(336, 212);
             this.Ehour.Margin = new System.Windows.Forms.Padding(2);
             this.Ehour.Name = "Ehour";

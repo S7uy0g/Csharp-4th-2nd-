@@ -61,6 +61,10 @@ namespace CsharpForm
 
         private void Mainmenu_Load(object sender, EventArgs e)
         {
+            home1.Show();
+            booking1.Hide();
+            inventory1.Hide();
+            employee1.Hide();
             home1.BackColor = Color.White;
             employee1.BackColor = Color.White;
             inventory1.BackColor = Color.White;
