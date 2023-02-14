@@ -186,7 +186,7 @@
             this.EAMPM.Items.AddRange(new object[] {
             "AM",
             "PM"});
-            this.EAMPM.Location = new System.Drawing.Point(514, 212);
+            this.EAMPM.Location = new System.Drawing.Point(514, 211);
             this.EAMPM.Margin = new System.Windows.Forms.Padding(2);
             this.EAMPM.Name = "EAMPM";
             this.EAMPM.Size = new System.Drawing.Size(82, 23);
@@ -196,6 +196,19 @@
             // EMin
             // 
             this.EMin.FormattingEnabled = true;
+            this.EMin.Items.AddRange(new object[] {
+            "00",
+            "05",
+            "10",
+            "15",
+            "20",
+            "25",
+            "30",
+            "35",
+            "40",
+            "45",
+            "50",
+            "55"});
             this.EMin.Location = new System.Drawing.Point(416, 212);
             this.EMin.Margin = new System.Windows.Forms.Padding(2);
             this.EMin.Name = "EMin";
@@ -205,6 +218,19 @@
             // Ehour
             // 
             this.Ehour.FormattingEnabled = true;
+            this.Ehour.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
             this.Ehour.Location = new System.Drawing.Point(336, 212);
             this.Ehour.Margin = new System.Windows.Forms.Padding(2);
             this.Ehour.Name = "Ehour";
@@ -304,7 +330,7 @@
             this.SAMPM.Items.AddRange(new object[] {
             "AM",
             "PM"});
-            this.SAMPM.Location = new System.Drawing.Point(514, 181);
+            this.SAMPM.Location = new System.Drawing.Point(514, 182);
             this.SAMPM.Name = "SAMPM";
             this.SAMPM.Size = new System.Drawing.Size(82, 23);
             this.SAMPM.TabIndex = 7;
@@ -328,7 +354,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label3.Location = new System.Drawing.Point(19, 154);
+            this.label3.Location = new System.Drawing.Point(19, 164);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 25);
             this.label3.TabIndex = 5;
@@ -339,7 +365,7 @@
             // 
             this.dateTimePicker1.CalendarMonthBackground = System.Drawing.SystemColors.Control;
             this.dateTimePicker1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dateTimePicker1.Location = new System.Drawing.Point(19, 182);
+            this.dateTimePicker1.Location = new System.Drawing.Point(19, 192);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(277, 33);
             this.dateTimePicker1.TabIndex = 4;

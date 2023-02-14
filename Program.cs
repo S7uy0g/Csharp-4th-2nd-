@@ -13,7 +13,7 @@ namespace CsharpForm
             // see https://aka.ms/applicationconfiguration.
 
             //Suyog laptop Database
-            //SqlConnection conn = new SqlConnection(@"Data Source=GWTN141-4;Initial Catalog=signUp;Integrated Security=True");
+            SqlConnection conn = new SqlConnection(@"Data Source=GWTN141-4;Initial Catalog=signUp;Integrated Security=True");
             
             //Suyog lab Database
             //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-LHHH1S3\SQLEXPRESS;Initial Catalog=signUp;Integrated Security=True");
