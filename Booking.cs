@@ -83,8 +83,9 @@ namespace CsharpForm
         {
             errorProvider1.Clear();
             string getName=FullName.Text;
-            string getContact=Contact.Text;
-            string getDate = dateTimePicker1.Value.ToString();
+            string getContact = Contact.Text;
+            DateTime getDateTime = dateTimePicker1.Value;
+            DateTime getBookingDate = new DateTime(getDateTime.Year, getDateTime.Month, getDateTime.Day);
             string getStartH = SHour.Text;
             string getStartM = SMin.Text;
             string getSAMPM =SAMPM.Text;
@@ -141,7 +142,7 @@ namespace CsharpForm
                         else
                         {
                             conn.Open();
-                            string query3 = "Insert into Booking values('" + getName + "','" + getContact + "','" + getDate + "','" + getStartH + "','" + getStartM + "','" + getSAMPM + "','" + getEndH + "','" + getEndM + "','" + getEAMPM + "','" + gStart + "','" + gEnd + "','" + getStart + "','" + getEnd + "')";
+                            string query3 = "Insert into Booking values('" + getName + "','" + getContact + "','" + getStartH + "','" + getStartM + "','" + getSAMPM + "','" + getEndH + "','" + getEndM + "','" + getEAMPM + "','" + gStart + "','" + gEnd + "','" + getStart + "','" + getEnd + "','"+ getBookingDate +"')";
                             SqlCommand cmd = new SqlCommand(query3, conn);
                             cmd.ExecuteNonQuery();
                             int hrs = gEnd.Hour - gStart.Hour;
@@ -258,7 +259,9 @@ namespace CsharpForm
             conn.Open();
             string Gstart = SHour.Text + ":" + SMin.Text + " "+SAMPM.Text;
             string Gend = Ehour.Text + ":" + EMin.Text + " " + EAMPM.Text;
-            string Uquery = "Update Booking set fullName='" + FullName.Text + "',Contact='" + Contact.Text + "',BookingDate='" + dateTimePicker1.Value.ToString() + "',SHour='" + Int32.Parse(SHour.Text) + "',SMin='" + Int32.Parse(SMin.Text) + "',SAMPM='"+ SAMPM.Text +"',EHour='"+ Int32.Parse(Ehour.Text)+"',EMin='"+ Int32.Parse(EMin.Text)+"',EAMPM='"+EAMPM.Text+ "',GStart='" + Gstart + "',GEnd='" + Gend + "' where Contact='"+ findBox.Text +"'";
+            DateTime getDateTime = dateTimePicker1.Value;
+            DateTime getBookingDate = new DateTime(getDateTime.Year, getDateTime.Month, getDateTime.Day);
+            string Uquery = "Update Booking set fullName='" + FullName.Text + "',Contact='" + Contact.Text + "',BookingDate='" + getBookingDate + "',SHour='" + Int32.Parse(SHour.Text) + "',SMin='" + Int32.Parse(SMin.Text) + "',SAMPM='"+ SAMPM.Text +"',EHour='"+ Int32.Parse(Ehour.Text)+"',EMin='"+ Int32.Parse(EMin.Text)+"',EAMPM='"+EAMPM.Text+ "',GStart='" + Gstart + "',GEnd='" + Gend + "' where Contact='"+ findBox.Text +"'";
             SqlCommand cmd = new SqlCommand(Uquery, conn);
             cmd.ExecuteNonQuery();
             conn.Close();

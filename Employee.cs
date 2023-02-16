@@ -86,8 +86,8 @@ CREATE TABLE Employee(
                 string getContact = dt.Rows[0]["Contact"].ToString();
                 string getPosition = dt.Rows[0]["Position"].ToString();
                 string getSalary = dt.Rows[0]["Salary"].ToString();
-                string getBookingDate = dt.Rows[0]["HireDate"].ToString();
-                DateTime DT = DateTime.Parse(getBookingDate);
+                string getHireDate = dt.Rows[0]["HireDate"].ToString();
+                DateTime DT = DateTime.Parse(getHireDate);
                 fullName.Text = getFullName;
                 contact.Text = getContact;
                 dateTimePicker1.Value = DT;
