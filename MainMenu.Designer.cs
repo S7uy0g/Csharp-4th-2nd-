@@ -158,7 +158,6 @@
         private Panel panel1;
         private Panel panel2;
         private Button button1;
-        private Home home1;
         private Button button2;
         private Booking booking1;
         private Employee employee1;
