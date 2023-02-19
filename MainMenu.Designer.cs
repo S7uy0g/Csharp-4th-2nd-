@@ -35,7 +35,10 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.home1 = new CsharpForm.Home();
+            this.booking1 = new CsharpForm.Booking();
+            this.employee1 = new CsharpForm.Employee();
+            this.inventory1 = new CsharpForm.inventory();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -130,9 +133,46 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // backgroundWorker1
+            // home1
             // 
-            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.home1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.home1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.home1.Location = new System.Drawing.Point(269, 81);
+            this.home1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.home1.Name = "home1";
+            this.home1.Size = new System.Drawing.Size(1034, 549);
+            this.home1.TabIndex = 2;
+            // 
+            // booking1
+            // 
+            this.booking1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.booking1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.booking1.Location = new System.Drawing.Point(269, 81);
+            this.booking1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.booking1.Name = "booking1";
+            this.booking1.Size = new System.Drawing.Size(1034, 549);
+            this.booking1.TabIndex = 3;
+            // 
+            // employee1
+            // 
+            this.employee1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.employee1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.employee1.Location = new System.Drawing.Point(269, 81);
+            this.employee1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.employee1.Name = "employee1";
+            this.employee1.Size = new System.Drawing.Size(1034, 549);
+            this.employee1.TabIndex = 4;
+            // 
+            // inventory1
+            // 
+            this.inventory1.BackColor = System.Drawing.Color.LightCoral;
+            this.inventory1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.inventory1.Location = new System.Drawing.Point(269, 81);
+            this.inventory1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.inventory1.Name = "inventory1";
+            this.inventory1.Size = new System.Drawing.Size(1034, 549);
+            this.inventory1.TabIndex = 5;
+            this.inventory1.Load += new System.EventHandler(this.inventory1_Load);
             // 
             // Mainmenu
             // 
@@ -140,6 +180,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
             this.ClientSize = new System.Drawing.Size(1303, 630);
+            this.Controls.Add(this.inventory1);
+            this.Controls.Add(this.employee1);
+            this.Controls.Add(this.booking1);
+            this.Controls.Add(this.home1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.Transparent;
@@ -165,6 +209,5 @@
         private inventory inventory1;
         private Button button4;
         private Button button3;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
