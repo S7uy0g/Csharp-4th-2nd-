@@ -194,26 +194,6 @@ namespace CsharpForm
         private void panel5_Paint(object sender, PaintEventArgs e)
         {
             DisplayData();
-           /* conn.Open();
-            string getStartH = SHour.Text;
-            string getStartM = SMin.Text;
-            string getSAMPM = SAMPM.Text;
-            string getEndH = Ehour.Text;
-            string getEndM = EMin.Text;
-            string getEAMPM = EAMPM.Text;
-            string getStart = getStartH + ":" + getStartM + " " + getSAMPM;
-            string getEnd = getEndH + ":" + getEndM + " " + getEAMPM;
-            DateTime gStart = DateTime.ParseExact(getStart, "h:mm tt", System.Globalization.CultureInfo.InvariantCulture);
-            DateTime gEnd = DateTime.ParseExact(getEnd, "h:mm tt", System.Globalization.CultureInfo.InvariantCulture);
-            string query = "Select BookingDate,GameStart,GameEnd from Booking where GameStart<='" + gStart + "' AND GameEnd>='" + gEnd + "'";
-            SqlCommand sqlCommand = new SqlCommand(query, conn);
-            SqlDataAdapter sda = new SqlDataAdapter(sqlCommand);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            if (dt.Rows.Count > 0)
-            {
-               errorProvider1.SetError(label4, "Booking Exists");
-            }*/
         }
 
         private void DisplayData()
@@ -280,17 +260,104 @@ namespace CsharpForm
 
         private void button3_Click(object sender, EventArgs e)
         {
-            conn.Open();
-            string Gstart = SHour.Text + ":" + SMin.Text + " "+SAMPM.Text;
-            string Gend = Ehour.Text + ":" + EMin.Text + " " + EAMPM.Text;
+            errorProvider1.Clear();
+            string getName = FullName.Text;
+            string getContact = Contact.Text;
             DateTime getDateTime = dateTimePicker1.Value;
             DateTime getBookingDate = new DateTime(getDateTime.Year, getDateTime.Month, getDateTime.Day);
-            string Uquery = "Update Booking set fullName='" + FullName.Text + "',Contact='" + Contact.Text + "',BookingDate='" + getBookingDate + "',SHour='" + Int32.Parse(SHour.Text) + "',SMin='" + Int32.Parse(SMin.Text) + "',SAMPM='"+ SAMPM.Text +"',EHour='"+ Int32.Parse(Ehour.Text)+"',EMin='"+ Int32.Parse(EMin.Text)+"',EAMPM='"+EAMPM.Text+ "',GStart='" + Gstart + "',GEnd='" + Gend + "' where Contact='"+ findBox.Text +"'";
-            SqlCommand cmd = new SqlCommand(Uquery, conn);
-            cmd.ExecuteNonQuery();
-            conn.Close();
-            DisplayData();
-
+            string getStartH = SHour.Text;
+            string getStartM = SMin.Text;
+            string getSAMPM = SAMPM.Text;
+            string getEndH = Ehour.Text;
+            string getEndM = EMin.Text;
+            string getEAMPM = EAMPM.Text;
+            string getStart = getStartH + ":" + getStartM + " " + getSAMPM;
+            string getEnd = getEndH + ":" + getEndM + " " + getEAMPM;
+            DateTime gStart = DateTime.ParseExact(getStart, "h:mm tt", System.Globalization.CultureInfo.InvariantCulture);
+            DateTime gEnd = DateTime.ParseExact(getEnd, "h:mm tt", System.Globalization.CultureInfo.InvariantCulture);
+            if (Int32.Parse(getStartH) > 12 || Int32.Parse(getStartH) < 1 || Int32.Parse(getStartM) > 60 || Int32.Parse(getStartM) < 0 || Int32.Parse(getEndH) > 12 || Int32.Parse(getStartH) < 1 || Int32.Parse(getStartM) > 60 || Int32.Parse(getStartM) < 0)
+            {
+                errorProvider1.SetError(SHour, "Wrong Input");
+            }
+            else
+            {
+                conn.Open();
+                string Tquery = "Select OTime,CTime from Booking_Time";
+                SqlCommand TsqlCommand = new SqlCommand(Tquery, conn);
+                SqlDataAdapter Tsda = new SqlDataAdapter(TsqlCommand);
+                DataTable Tdt = new DataTable();
+                Tsda.Fill(Tdt);
+                conn.Close();
+                if (Tdt.Rows.Count > 0)
+                {
+                    string temp1 = Tdt.Rows[0]["OTime"].ToString();
+                    DateTime Otime = DateTime.Parse(temp1);
+                    string temp2 = Tdt.Rows[0]["CTime"].ToString();
+                    DateTime Ctime = DateTime.Parse(temp2);
+                    if (gStart < Otime)
+                    {
+                        errorProvider1.SetError(label4, "Booking can't be made");
+                    }
+                    else if (gEnd > Ctime)
+                    {
+                        errorProvider1.SetError(label4, "Booking can't be made");
+                    }
+                    else
+                    {
+                        conn.Open();
+                        string query = "Select BookingDate,GameStart,GameEnd from Booking where GameStart<='" + gStart + "' AND GameEnd>'" + gStart + "'AND BookingDate='" + getBookingDate + "'AND Contact!='" + findBox.Text + "'";
+                        SqlCommand sqlCommand = new SqlCommand(query, conn);
+                        SqlDataAdapter sda = new SqlDataAdapter(sqlCommand);
+                        DataTable dt = new DataTable();
+                        sda.Fill(dt);
+                        conn.Close();
+                        if (dt.Rows.Count > 0)
+                        {
+                            errorProvider1.SetError(label4, "Booking Exists");
+                        }
+                        else
+                        {
+                            conn.Open();
+                            string query1 = "Select BookingDate,GameStart,GameEnd from Booking where GameStart<'" + gEnd + "' AND GameEnd>='" + gEnd + "'AND BookingDate='" + getBookingDate + "'AND Contact!='" + findBox.Text + "'";
+                            SqlCommand sqlCommand1 = new SqlCommand(query1, conn);
+                            SqlDataAdapter sda1 = new SqlDataAdapter(sqlCommand1);
+                            DataTable dt1 = new DataTable();
+                            sda1.Fill(dt1);
+                            conn.Close();
+                            if (dt1.Rows.Count > 0)
+                            {
+                                errorProvider1.SetError(label4, "Booking Exists");
+                            }
+                            else
+                            {
+                                conn.Open();
+                                string query2 = "Select BookingDate,GameStart,GameEnd from Booking where GameStart>='" + gStart + "' AND GameEnd<='" + gEnd + "'AND BookingDate='" + getBookingDate + "'AND Contact!='" + findBox.Text + "'";
+                                SqlCommand sqlCommand2 = new SqlCommand(query2, conn);
+                                SqlDataAdapter sda2 = new SqlDataAdapter(sqlCommand2);
+                                DataTable dt2 = new DataTable();
+                                sda2.Fill(dt2);
+                                conn.Close();
+                                if (dt2.Rows.Count > 0)
+                                {
+                                    errorProvider1.SetError(label4, "Booking Exists");
+                                }
+                                else
+                                {
+                                    conn.Open();
+                                    string Uquery = "Update Booking set fullName='" + getName + "',Contact='" + getContact + "',BookingDate='" + getBookingDate + "',SHour='" + getStartH + "',SMin='" + getStartM + "',SAMPM='" + getSAMPM + "',EHour='" + getEndH + "',EMin='" + getEndM + "',EAMPM='" + getEAMPM + "',GameStart='" + gStart + "',GameEnd='" + gEnd + "',Game_Start='" + getStart + "',Game_End='" + getEnd + "' where Contact='" + findBox.Text + "'";
+                                    SqlCommand cmd = new SqlCommand(Uquery, conn);
+                                    cmd.ExecuteNonQuery();
+                                    int hrs = gEnd.Hour - gStart.Hour;
+                                    int price = 1500 * hrs;
+                                    MessageBox.Show("Your Total Price is " + price);
+                                    DisplayData();
+                                    conn.Close();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
