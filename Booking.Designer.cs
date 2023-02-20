@@ -38,6 +38,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.findBox = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
             this.EAMPM = new System.Windows.Forms.ComboBox();
             this.EMin = new System.Windows.Forms.ComboBox();
             this.Ehour = new System.Windows.Forms.ComboBox();
@@ -59,8 +60,6 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -190,6 +189,16 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1121, 608);
             this.panel3.TabIndex = 1;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(831, 448);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(112, 34);
+            this.button6.TabIndex = 16;
+            this.button6.Text = "button6";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // EAMPM
             // 
@@ -478,31 +487,11 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(0, 0);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(112, 34);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(831, 448);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(112, 34);
-            this.button6.TabIndex = 16;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
             // Booking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.button5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -553,6 +542,5 @@
         private ErrorProvider errorProvider1;
         private DataGridView dataGridView1;
         private Button button6;
-        private Button button5;
     }
 }
