@@ -38,12 +38,15 @@
             this.booking1 = new CsharpForm.Booking();
             this.employee1 = new CsharpForm.Employee();
             this.inventory1 = new CsharpForm.inventory();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(27)))), ((int)(((byte)(42)))));
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -171,6 +174,17 @@
             this.inventory1.TabIndex = 5;
             this.inventory1.Load += new System.EventHandler(this.inventory1_Load);
             // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(633, 51);
+            this.label1.MaximumSize = new System.Drawing.Size(100, 100);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(59, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "label1";
+            // 
             // Mainmenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -189,6 +203,8 @@
             this.Text = "Mainmenu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Mainmenu_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -205,5 +221,6 @@
         private inventory inventory1;
         private Button button4;
         private Button button3;
+        private Label label1;
     }
 }
