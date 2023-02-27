@@ -14,36 +14,17 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 namespace CsharpForm
 {
 
-    /*CREATE DATABASE Bookingdb
-        
-    SCREATE TABLE Booking(
-        fullName VARCHAR(30) NOT NULL,
-        Contact VARCHAR(20) NOT NULL,
-        BookingDate VARCHAR(30),
-	    SHour VARCHAR(10) NOT NULL,
-        SMin VARCHAR(10) NOT NULL,
-	    SAMPM VARCHAR(5) NOT NULL,
-        EHour VARCHAR(10) NOT NULL,
-	    EMin VARCHAR(10) NOT NULL,
-        EAMPM VARCHAR(5) NOT NULL,
-		GameStart TIME NOT NULL,
-		GameEnd TIME NOT NULL,
-        Game_Start VARCHAR(10),
-	    Game_End VARCHAR(10)
-    );
-	SELECT * FROM Booking;
-*/
     public partial class Booking : UserControl
     {
         //Suyog Lab Database
-        SqlConnection conn = new SqlConnection(@"Data Source=GWTN141-4;Initial Catalog=Bookingdb;Integrated Security=True");
-        //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-LHHH1S3\SQLEXPRESS;Initial Catalog=signUp;Integrated Security=True");
+        //SqlConnection conn = new SqlConnection(@"Data Source=GWTN141-4;Initial Catalog=Bookingdb;Integrated Security=True");
+       // SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-LHHH1S3\SQLEXPRESS;Initial Catalog=signUp;Integrated Security=True");
 
 
 
         //Rohan Legion database
-       // SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-3ORSUC9H;Initial Catalog=signUp;Integrated Security=True");
-        //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-CLLMDVB\SQLEXPRESS;Initial Catalog=signUp;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-3ORSUC9H;Initial Catalog=Bookingdb;Integrated Security=True");
+        //SqlConnection conn = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=signUp;Integrated Security=True");
         public Booking()
         {
             InitializeComponent();

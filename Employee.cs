@@ -12,33 +12,17 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CsharpForm
 {
-    /*  use EmployeeDB
-  CREATE TABLE FiredEmployee(
-      empName varchar(20),
-      Contact varchar(10),
-      Position varchar(30),
-      Salary int,
-      HireDate date,
-      FireDate date
-  );*/
- /*   use EmployeeDB
-CREATE TABLE Employee(
-    empName varchar(20),
-    Contact varchar(10),
-    Position varchar(30),
-	Salary int,
-	HireDate date
-);*/
+
     public partial class Employee : UserControl
     {
         //Suyog Lab Database
-        SqlConnection conn = new SqlConnection(@"Data Source=GWTN141-4;Initial Catalog=EmployeeDB;Integrated Security=True");
+        //SqlConnection conn = new SqlConnection(@"Data Source=GWTN141-4;Initial Catalog=EmployeeDB;Integrated Security=True");
         //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-LHHH1S3\SQLEXPRESS;Initial Catalog=BookingDB;Integrated Security=True");
 
 
 
         //Rohan Legion database
-        //SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-3ORSUC9H;Initial Catalog=signUp;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-3ORSUC9H;Initial Catalog=EmployeeDB;Integrated Security=True");
         //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-CLLMDVB\SQLEXPRESS;Initial Catalog=signUp;Integrated Security=True");
         public Employee()
         {
@@ -137,6 +121,11 @@ CREATE TABLE Employee(
             SqlCommand cmd1 = new SqlCommand(query1, conn);
             cmd1.ExecuteNonQuery();
             conn.Close();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
