@@ -14,13 +14,13 @@ namespace CsharpForm
     public partial class inventory : UserControl
     {
         //Suyog Lab Database
-        //SqlConnection conn = new SqlConnection(@"Data Source=GWTN141-4;Initial Catalog=InventoryDB;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=GWTN141-4;Initial Catalog=InventoryDB;Integrated Security=True");
         //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-LHHH1S3\SQLEXPRESS;Initial Catalog=BookingDB;Integrated Security=True");
 
 
 
         //Rohan Legion database
-        SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-3ORSUC9H;Initial Catalog=InventoryDB;Integrated Security=True");
+        //SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-3ORSUC9H;Initial Catalog=signUp;Integrated Security=True");
         //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-CLLMDVB\SQLEXPRESS;Initial Catalog=signUp;Integrated Security=True");
         public inventory()
         {
@@ -69,6 +69,11 @@ namespace CsharpForm
         private void inventory_Load(object sender, EventArgs e)
         {
             DisplayData();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

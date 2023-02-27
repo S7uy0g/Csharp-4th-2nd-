@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -50,13 +52,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.fullName = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -70,9 +72,10 @@
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 397);
+            this.panel1.Location = new System.Drawing.Point(0, 662);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1321, 401);
+            this.panel1.Size = new System.Drawing.Size(1887, 668);
             this.panel1.TabIndex = 0;
             // 
             // button4
@@ -81,9 +84,10 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button4.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button4.Location = new System.Drawing.Point(615, 265);
+            this.button4.Location = new System.Drawing.Point(879, 442);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(202, 47);
+            this.button4.Size = new System.Drawing.Size(289, 78);
             this.button4.TabIndex = 12;
             this.button4.Text = "Fire";
             this.button4.UseVisualStyleBackColor = false;
@@ -95,9 +99,10 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button3.Location = new System.Drawing.Point(849, 265);
+            this.button3.Location = new System.Drawing.Point(1213, 442);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(202, 47);
+            this.button3.Size = new System.Drawing.Size(289, 78);
             this.button3.TabIndex = 12;
             this.button3.Text = "Modify";
             this.button3.UseVisualStyleBackColor = false;
@@ -109,9 +114,10 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button2.Location = new System.Drawing.Point(910, 143);
+            this.button2.Location = new System.Drawing.Point(1300, 238);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(141, 39);
+            this.button2.Size = new System.Drawing.Size(201, 65);
             this.button2.TabIndex = 12;
             this.button2.Text = "Find";
             this.button2.UseVisualStyleBackColor = false;
@@ -121,9 +127,10 @@
             // 
             this.findBox.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.findBox.ForeColor = System.Drawing.Color.DimGray;
-            this.findBox.Location = new System.Drawing.Point(615, 143);
+            this.findBox.Location = new System.Drawing.Point(879, 238);
+            this.findBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.findBox.Name = "findBox";
-            this.findBox.Size = new System.Drawing.Size(279, 39);
+            this.findBox.Size = new System.Drawing.Size(397, 55);
             this.findBox.TabIndex = 12;
             // 
             // label7
@@ -131,18 +138,20 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(692, 21);
+            this.label7.Location = new System.Drawing.Point(989, 35);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(277, 50);
+            this.label7.Size = new System.Drawing.Size(413, 74);
             this.label7.TabIndex = 12;
             this.label7.Text = "Hire Employee";
             // 
             // panel4
             // 
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(1121, 0);
+            this.panel4.Location = new System.Drawing.Point(1601, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(200, 401);
+            this.panel4.Size = new System.Drawing.Size(286, 668);
             this.panel4.TabIndex = 1;
             // 
             // panel3
@@ -161,8 +170,9 @@
             this.panel3.Controls.Add(this.fullName);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(577, 401);
+            this.panel3.Size = new System.Drawing.Size(824, 668);
             this.panel3.TabIndex = 0;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
@@ -172,9 +182,10 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(285, 293);
+            this.button1.Location = new System.Drawing.Point(407, 488);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(228, 47);
+            this.button1.Size = new System.Drawing.Size(326, 78);
             this.button1.TabIndex = 11;
             this.button1.Text = "Hire";
             this.button1.UseVisualStyleBackColor = false;
@@ -185,9 +196,10 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(139, 21);
+            this.label6.Location = new System.Drawing.Point(199, 35);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(277, 50);
+            this.label6.Size = new System.Drawing.Size(413, 74);
             this.label6.TabIndex = 10;
             this.label6.Text = "Hire Employee";
             // 
@@ -195,9 +207,10 @@
             // 
             this.position.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.position.ForeColor = System.Drawing.Color.DimGray;
-            this.position.Location = new System.Drawing.Point(285, 220);
+            this.position.Location = new System.Drawing.Point(407, 367);
+            this.position.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.position.Name = "position";
-            this.position.Size = new System.Drawing.Size(228, 39);
+            this.position.Size = new System.Drawing.Size(324, 55);
             this.position.TabIndex = 9;
             // 
             // label5
@@ -206,9 +219,10 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(285, 192);
+            this.label5.Location = new System.Drawing.Point(407, 320);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(84, 25);
+            this.label5.Size = new System.Drawing.Size(128, 40);
             this.label5.TabIndex = 8;
             this.label5.Text = "Position";
             // 
@@ -218,26 +232,29 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(285, 115);
+            this.label4.Location = new System.Drawing.Point(407, 192);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(96, 25);
+            this.label4.Size = new System.Drawing.Size(147, 40);
             this.label4.TabIndex = 7;
             this.label4.Text = "Hire Date";
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(285, 143);
+            this.dateTimePicker1.Location = new System.Drawing.Point(407, 238);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(228, 23);
+            this.dateTimePicker1.Size = new System.Drawing.Size(324, 31);
             this.dateTimePicker1.TabIndex = 6;
             // 
             // salary
             // 
             this.salary.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.salary.ForeColor = System.Drawing.Color.DimGray;
-            this.salary.Location = new System.Drawing.Point(31, 293);
+            this.salary.Location = new System.Drawing.Point(44, 488);
+            this.salary.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.salary.Name = "salary";
-            this.salary.Size = new System.Drawing.Size(228, 39);
+            this.salary.Size = new System.Drawing.Size(324, 55);
             this.salary.TabIndex = 5;
             // 
             // label3
@@ -246,9 +263,10 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(31, 265);
+            this.label3.Location = new System.Drawing.Point(44, 442);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 25);
+            this.label3.Size = new System.Drawing.Size(102, 40);
             this.label3.TabIndex = 4;
             this.label3.Text = "Salary";
             // 
@@ -256,9 +274,10 @@
             // 
             this.contact.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.contact.ForeColor = System.Drawing.Color.DimGray;
-            this.contact.Location = new System.Drawing.Point(31, 220);
+            this.contact.Location = new System.Drawing.Point(44, 367);
+            this.contact.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.contact.Name = "contact";
-            this.contact.Size = new System.Drawing.Size(228, 39);
+            this.contact.Size = new System.Drawing.Size(324, 55);
             this.contact.TabIndex = 3;
             // 
             // label2
@@ -267,9 +286,10 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(31, 192);
+            this.label2.Location = new System.Drawing.Point(44, 320);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 25);
+            this.label2.Size = new System.Drawing.Size(123, 40);
             this.label2.TabIndex = 2;
             this.label2.Text = "Contact";
             // 
@@ -279,9 +299,10 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(31, 115);
+            this.label1.Location = new System.Drawing.Point(44, 192);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 25);
+            this.label1.Size = new System.Drawing.Size(156, 40);
             this.label1.TabIndex = 1;
             this.label1.Text = "Full Name";
             // 
@@ -289,9 +310,10 @@
             // 
             this.fullName.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.fullName.ForeColor = System.Drawing.Color.DimGray;
-            this.fullName.Location = new System.Drawing.Point(31, 143);
+            this.fullName.Location = new System.Drawing.Point(44, 238);
+            this.fullName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.fullName.Name = "fullName";
-            this.fullName.Size = new System.Drawing.Size(228, 39);
+            this.fullName.Size = new System.Drawing.Size(324, 55);
             this.fullName.TabIndex = 0;
             // 
             // panel2
@@ -300,43 +322,52 @@
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1321, 397);
+            this.panel2.Size = new System.Drawing.Size(1887, 662);
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
             // dataGridView1
             // 
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 62;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(1321, 397);
+            this.dataGridView1.Size = new System.Drawing.Size(1887, 662);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // Employee
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Employee";
-            this.Size = new System.Drawing.Size(1321, 798);
+            this.Size = new System.Drawing.Size(1887, 1330);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }

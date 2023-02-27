@@ -16,19 +16,30 @@ namespace CsharpForm
     public partial class Employee : UserControl
     {
         //Suyog Lab Database
-        //SqlConnection conn = new SqlConnection(@"Data Source=GWTN141-4;Initial Catalog=EmployeeDB;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=GWTN141-4;Initial Catalog=EmployeeDB;Integrated Security=True");
         //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-LHHH1S3\SQLEXPRESS;Initial Catalog=BookingDB;Integrated Security=True");
 
 
 
         //Rohan Legion database
-        SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-3ORSUC9H;Initial Catalog=EmployeeDB;Integrated Security=True");
+        //SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-3ORSUC9H;Initial Catalog=EmployeeDB;Integrated Security=True");
         //SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-CLLMDVB\SQLEXPRESS;Initial Catalog=signUp;Integrated Security=True");
         public Employee()
         {
             InitializeComponent();
         }
-
+        private void DisplayData()
+        {
+            conn.Open();
+            dataGridView1.Refresh();
+            string query = "Select empName,Contact,Position,Salary,HireDate from employee";
+            SqlCommand sqlCommand = new SqlCommand(query, conn);
+            SqlDataAdapter sda = new SqlDataAdapter(sqlCommand);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            dataGridView1.DataSource = dt;
+            conn.Close();
+        }
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -52,6 +63,7 @@ namespace CsharpForm
             SqlCommand cmd = new SqlCommand(query, conn);
             cmd.ExecuteNonQuery();
             conn.Close();
+            DisplayData();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -94,10 +106,11 @@ namespace CsharpForm
             string getPosition = position.Text;
             string getSalary = salary.Text;
             conn.Open();
-            string query = "Update employee set empName='" + getName + "',Contact='" + getContact + "',Position='" + getPosition + "',Salary='" + getSalary + "',HireDate='" + getHireDate + "'";
+            string query = "Update employee set empName='" + getName + "',Contact='" + getContact + "',Position='" + getPosition + "',Salary='" + getSalary + "',HireDate='" + getHireDate + "' where Contact='"+ findBox.Text +"'";
             SqlCommand cmd = new SqlCommand(query, conn);
             cmd.ExecuteNonQuery();
             conn.Close();
+            DisplayData();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -121,9 +134,15 @@ namespace CsharpForm
             SqlCommand cmd1 = new SqlCommand(query1, conn);
             cmd1.ExecuteNonQuery();
             conn.Close();
+            DisplayData();
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+            DisplayData();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
