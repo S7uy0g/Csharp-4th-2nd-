@@ -207,6 +207,7 @@ namespace CsharpForm
             sda.Fill(dt);
             if (dt.Rows.Count > 0)
             {
+                errorProvider1.Clear();
                 dataGridView1.DataSource = dt;
             }
             else
