@@ -200,37 +200,14 @@ namespace CsharpForm
         {
             conn.Open();
             string getFind = findBox.Text;
-            string query = "Select fullName,Contact,BookingDate,SHour,SMin,SAMPM,EHour,EMin,EAMPM from Booking where Contact='" + getFind + "'";
+            string query = "Select fullName,Contact,BookingDate,Game_Start,Game_End from Booking where Contact='" + getFind + "'";
             SqlCommand sqlCommand = new SqlCommand(query, conn);
             SqlDataAdapter sda = new SqlDataAdapter(sqlCommand);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             if (dt.Rows.Count > 0)
             {
-                errorProvider1.Clear();
-                string getFullName = dt.Rows[0]["fullName"].ToString();
-                string getContact = dt.Rows[0]["Contact"].ToString();
-                string getBookingDate = dt.Rows[0]["BookingDate"].ToString();
-                DateTime DT = DateTime.Parse(getBookingDate);
-                string getPSHour = dt.Rows[0]["SHour"].ToString();
-                string getPSMin = dt.Rows[0]["SMin"].ToString();
-                string getSAMPM = dt.Rows[0]["SAMPM"].ToString();
-                string getPEHour = dt.Rows[0]["EHour"].ToString();
-                string getPEMin = dt.Rows[0]["EMin"].ToString();
-                string getEAMPM = dt.Rows[0]["EAMPM"].ToString();
-               /* int getSHour = Int32.Parse(getPSHour);
-                int getSMin = Int32.Parse(getPSMin);
-                int getEHour = Int32.Parse(getPEHour);
-                int getEMin = Int32.Parse(getPEMin);*/
-                FullName.Text = getFullName;
-                Contact.Text = getContact;
-                dateTimePicker1.Value = DT;
-                SHour.Text = getPSHour;
-                SMin.Text = getPSMin;
-                SAMPM.Text = getSAMPM;
-                Ehour.Text = getPEHour;
-                EMin.Text = getPEMin;
-                EAMPM.Text = getEAMPM;
+                dataGridView1.DataSource = dt;
             }
             else
             {
@@ -368,6 +345,45 @@ namespace CsharpForm
             SqlCommand cmd = new SqlCommand(query3, conn);
             cmd.ExecuteNonQuery();
             conn.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow data = dataGridView1.CurrentRow;
+            string name = data.Cells["fullName"].Value.ToString();
+            string contacts = data.Cells["Contact"].Value.ToString();
+            string bookingDate = data.Cells["BookingDate"].Value.ToString();
+            DateTime DT1 = DateTime.Parse(bookingDate);
+            string gStart= data.Cells["Game_Start"].Value.ToString();
+            string gEnd= data.Cells["Game_End"].Value.ToString();
+            string query = "Select fullName,Contact,BookingDate,SHour,SMin,SAMPM,EHour,EMin,EAMPM from Booking where Contact='" + contacts + "' AND fullName='"+name+ "' AND BookingDate = '"+DT1+"' AND Game_Start='" + gStart+"' AND Game_End='"+gEnd+"'"; 
+            SqlCommand sqlCommand = new SqlCommand(query, conn);
+            SqlDataAdapter sda = new SqlDataAdapter(sqlCommand);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            if (dt.Rows.Count > 0)
+            {
+                errorProvider1.Clear();
+                string getFullName = dt.Rows[0]["fullName"].ToString();
+                string getContact = dt.Rows[0]["Contact"].ToString();
+                string getBookingDate = dt.Rows[0]["BookingDate"].ToString();
+                DateTime DT = DateTime.Parse(getBookingDate);
+                string getPSHour = dt.Rows[0]["SHour"].ToString();
+                string getPSMin = dt.Rows[0]["SMin"].ToString();
+                string getSAMPM = dt.Rows[0]["SAMPM"].ToString();
+                string getPEHour = dt.Rows[0]["EHour"].ToString();
+                string getPEMin = dt.Rows[0]["EMin"].ToString();
+                string getEAMPM = dt.Rows[0]["EAMPM"].ToString();
+                dateTimePicker1.Value = DT;
+                SHour.Text = getPSHour;
+                SMin.Text = getPSMin;
+                SAMPM.Text = getSAMPM;
+                Ehour.Text = getPEHour;
+                EMin.Text = getPEMin;
+                EAMPM.Text = getEAMPM;
+                FullName.Text = name;
+                Contact.Text = contacts;
+            }
         }
     }
 }

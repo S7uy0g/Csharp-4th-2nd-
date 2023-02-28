@@ -60,6 +60,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.button5 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -83,6 +84,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.button5);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.button3);
@@ -487,6 +489,16 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(500, 199);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(112, 34);
+            this.button5.TabIndex = 12;
+            this.button5.Text = "button5";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // Booking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -542,5 +554,6 @@
         private ErrorProvider errorProvider1;
         private DataGridView dataGridView1;
         private Button button6;
+        private Button button5;
     }
 }
